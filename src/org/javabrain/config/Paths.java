@@ -1,10 +1,10 @@
 package org.javabrain.config;
 
 import org.javabrain.data.JSON;
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+
 
 import java.io.*;
 import java.util.logging.Level;
@@ -32,9 +32,33 @@ public class Paths {
             Logger.getLogger(JSON.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        JSONPath = data.get("JSON").toString().replace("..",System.getProperty("user.dir")).replace("/","\\");
+
+        JSONPath = path(data);
+
+
         imgPath  = data.get("img").toString().replace("..",System.getProperty("user.dir")).replace("/","\\");
     }
+
+    private String path(JSONObject data)
+    {
+        String[] json = data.get("JSON").toString().split("/");
+
+        for (int i = 0; i < json.length; i++) {
+
+            if (json[i].equals("..")){
+                JSONPath = data.get("JSON").toString().replace("..",System.getProperty("user.dir")).replace("/","\\");
+                return JSONPath;
+            }
+            else
+            {
+                JSONPath = data.get("JSON").toString();
+            }
+
+        }
+
+        return JSONPath;
+    }
+
 
     public String getJSONPath() {
         return JSONPath;
