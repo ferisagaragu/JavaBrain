@@ -33,7 +33,7 @@ public class JSON {
         try
         {
             JSONParser parser = new JSONParser();
-            BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream(System.getProperty("user.dir")+"//data//"+fileName+".json"), "utf-8"));
+            BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream(System.getProperty("user.dir")+"//data//"+fileName+".json".replace("/","\\")), "utf-8"));
             data = (JSONArray) parser.parse(in);
         }
         catch (FileNotFoundException | ParseException ex)
@@ -53,7 +53,7 @@ public class JSON {
 
         try {
             BufferedWriter out =
-                    new BufferedWriter(new OutputStreamWriter(new FileOutputStream(System.getProperty("user.dir")+"\\data\\"+fileName+".json"), "utf-8"));
+                    new BufferedWriter(new OutputStreamWriter(new FileOutputStream(System.getProperty("user.dir")+"\\data\\"+fileName+".json".replace("/","\\")), "utf-8"));
             out.write(JSON.replace("\\","").replace("\"{","{").replace("}\"","}"));
             out.close();
 
