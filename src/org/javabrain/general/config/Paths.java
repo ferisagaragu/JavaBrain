@@ -1,10 +1,5 @@
-package org.javabrain.config;
+package org.javabrain.general.config;
 
-import org.javabrain.console.alerts.Message;
-import org.javabrain.data.JSON;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -13,6 +8,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.javabrain.general.console.alerts.Message;
+import org.javabrain.general.data.JSON;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 public class Paths {
 
@@ -86,7 +86,7 @@ public class Paths {
         if (JSONPath == null)
         {
             Message.error("The JSON path can not be found in the mapping of the file \"paths.json\",\n" +
-            "it will be defined \""+System.getProperty("user.dir")+"\"\nby default until the route deduced is mapped");
+            "it will be defined \""+System.getProperty("user.dir")+"\"\nby default until the route deduced is mapped",false);
             JSONPath = System.getProperty("user.dir");
         }
 
@@ -98,7 +98,7 @@ public class Paths {
         if (imgPath == null)
         {
             Message.error("The img path can not be found in the mapping of the file \"paths.json\",\n" +
-                    "it will be defined \""+System.getProperty("user.dir")+"\"\nby default until the route deduced is mapped");
+                    "it will be defined \""+System.getProperty("user.dir")+"\"\nby default until the route deduced is mapped",false);
             imgPath = System.getProperty("user.dir");
         }
 
@@ -110,7 +110,7 @@ public class Paths {
         if (rawPath == null)
         {
             Message.error("The raw path can not be found in the mapping of the file \"paths.json\",\n" +
-                    "it will be defined \""+System.getProperty("user.dir")+"\"\nby default until the route deduced is mapped");
+                    "it will be defined \""+System.getProperty("user.dir")+"\"\nby default until the route deduced is mapped",false);
             rawPath = System.getProperty("user.dir");
         }
 
@@ -122,7 +122,7 @@ public class Paths {
         if (drawablePath == null)
         {
             Message.error("The drawable path can not be found in the mapping of the file \"paths.json\",\n" +
-                    "it will be defined \""+System.getProperty("user.dir")+"\"\nby default until the route deduced is mapped");
+                    "it will be defined \""+System.getProperty("user.dir")+"\"\nby default until the route deduced is mapped",false);
             drawablePath = System.getProperty("user.dir");
         }
 
@@ -135,7 +135,7 @@ public class Paths {
         {
             Message.setLanguage("ES");
             Message.error("The other path can not be found in the mapping of the file \"paths.json\",\n" +
-                    "it will be defined \""+System.getProperty("user.dir")+"\"\nby default until the route deduced is mapped");
+                    "it will be defined \""+System.getProperty("user.dir")+"\"\nby default until the route deduced is mapped",false);
             otherPath = System.getProperty("user.dir");
         }
 

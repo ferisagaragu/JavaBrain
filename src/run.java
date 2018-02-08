@@ -1,6 +1,6 @@
-import org.javabrain.config.Paths;
 
 import java.io.File;
+import org.javabrain.general.config.Paths;
 
 public class run {
 

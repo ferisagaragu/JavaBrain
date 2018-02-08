@@ -1,11 +1,11 @@
-package org.figtech.general.web;
+package org.javabrain.general.web;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
-import org.figtech.general.console.alerts.Message;
+import org.javabrain.general.console.alerts.Message;
 
 /**
  *

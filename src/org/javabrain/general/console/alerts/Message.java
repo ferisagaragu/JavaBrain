@@ -1,4 +1,4 @@
-package org.figtech.general.console.alerts;
+package org.javabrain.general.console.alerts;
 
 /**
  * Created by Fernando García on 02/02/2018.
@@ -41,7 +41,7 @@ public class Message {
             System.out.println("\033[31mException:\033[0m\n");
         }
     }
-    
+
     public static void warning(String message){
         if (language.equals("EN")){
             System.out.println("\033[33m---Warning---\n");
@@ -51,6 +51,12 @@ public class Message {
         }
 
         System.out.println("\033[33m"+message);
+        System.out.println(firm);
+    }
+    
+    public static void custom(String message,String title){
+        System.out.println("\033[35m---"+title+"---\n");
+        System.out.println("\033[35m"+message);
         System.out.println(firm);
     }
 

@@ -1,4 +1,4 @@
-package org.javabrain.data;
+package org.javabrain.general.data;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;

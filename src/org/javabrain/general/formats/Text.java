@@ -1,4 +1,4 @@
-package org.figtech.general.formats;
+package org.javabrain.general.formats;
 
 /**
  *
