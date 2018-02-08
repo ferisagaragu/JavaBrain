@@ -1,14 +1,15 @@
 import org.javabrain.config.Paths;
-import org.javabrain.data.JSON;
+
+import java.io.File;
 
 public class run {
 
     public static void main(String[] args){
 
-        Paths paths = new Paths();
+        Paths paths = Paths.getInstance();
 
-
-        System.out.print(paths.getJSONPath());
+        File file = new File(paths.getJSONPath());
+        System.out.println(file.list()[0]);
     }
 
 
