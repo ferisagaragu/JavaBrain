@@ -47,7 +47,7 @@ public class Corrector {
         } catch (IOException ex) {
             System.err.print(ex.getMessage());
         }
-
+        
     }
     
 }
