@@ -1,0 +1,59 @@
+[
+  {
+    "DNA1":
+    {
+      "en":
+      {
+        "success":"",
+        "warning":"",
+        "info":"I lost my configuration, but I'm going to regenerate it.",
+        "error":""
+      },
+      "es":
+      {
+        "success":"",
+        "warning":"",
+        "info":"No encuentro mis archivos de configuración, pero los reconstruire.",
+        "error":""
+      }
+    }
+  },
+  {
+    "DNA2":
+    {
+      "en":
+      {
+        "success":"",
+        "warning":"",
+        "info":"Everything is ready, rerun the code. I recommend you check the file found in /conf/neuron.json\n",
+        "error":""
+      },
+      "es":
+      {
+        "success":"",
+        "warning":"",
+        "info":"Todo esta listo, vuelve a ejecutar el código. Te recomiendo revisar el archivo que se encuentra en /conf/neuron.json\n",
+        "error":""
+      }
+    }
+  },
+  {
+    "DNA3":
+    {
+      "en":
+      {
+        "success": "File &?1& downloaded and hosted in /conf/&?1&/&?2& \n",
+        "warning":"",
+        "info": "Downloading ... from the JavaBrain server the file: &?1&",
+        "error": "There was an error while downloading the file &?1& check the README file in the folder /conf/ \n"
+      },
+      "es":
+      {
+        "success":"Archivo &?1& descargado y alojado en /conf/&?1&/&?2& \n",
+        "warning":"",
+        "info":"Descargando... desde el servidor JavaBrain el archivo: &?1&",
+        "error":"Hubo un error al descargar el archivo &?1& consulte el archivo README de la carpeta /conf/ \n"
+      }
+    }
+  }
+]

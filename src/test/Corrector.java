@@ -6,7 +6,7 @@ import java.util.zip.ZipFile;
 import org.dts.spell.SpellChecker;
 import org.dts.spell.dictionary.SpellDictionary;
 import org.dts.spell.dictionary.openoffice.OpenOfficeSpellDictionary;
-import org.javabrain.general.web.Service;
+import org.javabrain.util.web.Service;
 
 
 /**
@@ -20,7 +20,7 @@ public class Corrector {
      */
     public static void main(String[] args) {
         
-        File f = new File("en_US.zip");
+        File f = new File("es_MX.zip");
         if(f.exists())
         {
             System.out.println("el archivo existe");
@@ -35,7 +35,7 @@ public class Corrector {
            SpellDictionary dict = new OpenOfficeSpellDictionary(new ZipFile("es_MX.zip"));
            SpellChecker checker = new SpellChecker(dict) ;
 
-           checker.setCaseSensitive(false) ;
+           checker.setCaseSensitive(false);
            
             System.out.println(checker.isCorrect("testo")); 
            
