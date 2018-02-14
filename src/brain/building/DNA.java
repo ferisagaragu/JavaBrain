@@ -30,30 +30,56 @@ public class DNA {
 
         if(read() != null) {
             JSONObject object = read();
-            language = object.get("language").toString();
-            download = Boolean.parseBoolean(object.get("download").toString());
+
+            if(object.get("language").toString().isEmpty()){
+                language = "es";
+            }
+            else{
+                language = object.get("language").toString().toLowerCase();
+            }
+
+            if(object.get("download").toString().isEmpty()){
+                download = true;
+            }
+            else{
+                download = Boolean.parseBoolean(object.get("download").toString());
+            }
 
             if (object.get("spell").toString().isEmpty()) {
                 spell = null;
             } else {
                 spell = object.get("spell").toString().replace(" ", "").split(",");
             }
+
             if (object.get("fount").toString().isEmpty()) {
                 fount = null;
             } else {
-                fount = object.get("fount").toString().split(" ");
+                fount = object.get("fount").toString().toLowerCase().split(" ");
             }
 
-            warning = Boolean.parseBoolean(object.get("warning").toString());
-            company = object.get("company").toString().replace(" ", "");
+            if(object.get("warning").toString().isEmpty()){
+                warning = true;
+            }
+            else{
+                warning = Boolean.parseBoolean(object.get("warning").toString());
+            }
+
+            if(object.get("company").toString().isEmpty()){
+                company = "";
+            }
+            else{
+                company = object.get("company").toString().replace(" ", "");
+            }
 
             if(object.get("folder").toString().isEmpty()){
                 folder = null;
             }else {
-                folder = object.get("folder").toString().split(",");
+                folder = object.get("folder").toString().toLowerCase().split(",");
             }
 
             makeFolders();
+            makeDic();
+            makePath();
 
             if(download){
 
@@ -125,16 +151,56 @@ public class DNA {
            folder2.mkdirs();
            BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream((System.getProperty("user.dir") + "/conf/neuron.json").replace("/", "\\")), "utf-8"));
            out.write("{\n" +
-                        "  \"language\":\"es\",\n" +
-                        "  \"download\":true,\n" +
-                        "  \"spell\":\"es_MX,en_US\",\n" +
-                        "  \"fount\":\"roboto ti-20 tx-16 ts-12\",\n" +
-                        "  \"warning\":true,\n" +
-                        "  \"company\":\"org.myapp\",\n" +
-                        "  \"folder\": \"model,view,controller,res,raw\"\n" +
-                        "}");
+                   "  \"language\":\"es\",\n" +
+                   "  \"download\":true,\n" +
+                   "  \"spell\":\"es_MX,en_US\",\n" +
+                   "  \"fount\":\"roboto ti-20 tx-16 ts-12\",\n" +
+                   "  \"warning\":true,\n" +
+                   "  \"company\":\"org.myapp\",\n" +
+                   "  \"folder\": \"model,view,controller,res,raw\",\n" +
+                   "  \"library\":\"on proces\"\n" +
+                   "}");
            out.close();
         } catch (Exception e) {}
+
+    }
+    private void makeDic(){
+
+        File folder = new File(System.getProperty("user.dir") + "\\conf\\dic\\myspell.dic");
+
+        if (!folder.exists()) {
+            try {
+                BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream((System.getProperty("user.dir") + "/conf/dic/myspell.dic").replace("/", "\\")), "utf-8"));
+                out.write("Java,\n" +
+                        "Brain");
+                out.close();
+            } catch (Exception e) {
+            }
+        }
+
+    }
+    private void makePath(){
+
+        File folder = new File(System.getProperty("user.dir") + "\\conf\\path.json");
+
+        if (!folder.exists()) {
+            try {
+                BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream((System.getProperty("user.dir") + "/conf/path.json").replace("/", "\\")), "utf-8"));
+                out.write("{\n" +
+                        "  \"img\":\"\",\n" +
+                        "  \"raw\":\"\",\n" +
+                        "  \"svg\":\"\",\n" +
+                        "  \"html\":\"\",\n" +
+                        "  \"css\":\"\",\n" +
+                        "  \"json\":\"\",\n" +
+                        "  \"messages\":\"\",\n" +
+                        "  \"file\":\"\",\n" +
+                        "  \"xml\":\"\"\n" +
+                        "}");
+                out.close();
+            } catch (Exception e) {
+            }
+        }
 
     }
     private void makeFolders(){

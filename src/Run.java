@@ -1,5 +1,6 @@
 
 import brain.building.DNA;
+import org.javabrain.util.alerts.Consol;
 
 
 public class Run {
