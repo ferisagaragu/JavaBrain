@@ -25,56 +25,118 @@ public class DNA {
     public final boolean warning;
     public final String company;
     public final String[] folder;
+    public final String[] library;
+    public final boolean clean;
      
     private DNA() {
 
         if(read() != null) {
             JSONObject object = read();
 
-            if(object.get("language").toString().isEmpty()){
+            String lang = "";
+            try{
+                lang = object.get("language").toString();
+            }catch (Exception e){}
+
+            if(lang.isEmpty()){
                 language = "es";
             }
             else{
                 language = object.get("language").toString().toLowerCase();
             }
 
-            if(object.get("download").toString().isEmpty()){
+            String downd = "";
+            try{
+                downd = object.get("download").toString();
+                Boolean.parseBoolean(object.get("download").toString());
+            }catch (Exception e){}
+
+            if(downd.isEmpty()){
                 download = true;
             }
             else{
                 download = Boolean.parseBoolean(object.get("download").toString());
             }
 
-            if (object.get("spell").toString().isEmpty()) {
+            String spel = "";
+            try{
+                spel = object.get("spell").toString();
+            }catch (Exception e){}
+
+            if (spel.isEmpty()) {
                 spell = null;
             } else {
                 spell = object.get("spell").toString().replace(" ", "").split(",");
             }
 
-            if (object.get("fount").toString().isEmpty()) {
+            String fou = "";
+            try{
+                fou = object.get("fount").toString();
+            }catch (Exception e){}
+
+            if (fou.isEmpty()) {
                 fount = null;
             } else {
                 fount = object.get("fount").toString().toLowerCase().split(" ");
             }
 
-            if(object.get("warning").toString().isEmpty()){
+            String war = "";
+            try{
+                war = object.get("warning").toString();
+                Boolean.parseBoolean(object.get("warning").toString());
+            }catch (Exception e){}
+
+            if(war.isEmpty()){
                 warning = true;
             }
             else{
                 warning = Boolean.parseBoolean(object.get("warning").toString());
             }
 
-            if(object.get("company").toString().isEmpty()){
+            String comp = "";
+            try{
+                comp = object.get("company").toString();
+            }catch (Exception e){}
+
+            if(comp.isEmpty()){
                 company = "";
             }
             else{
                 company = object.get("company").toString().replace(" ", "");
             }
 
-            if(object.get("folder").toString().isEmpty()){
+            String folde = "";
+            try{
+                folde = object.get("folder").toString();
+            }catch (Exception e){}
+
+            if(folde.isEmpty()){
                 folder = null;
             }else {
                 folder = object.get("folder").toString().toLowerCase().split(",");
+            }
+
+            String lib = "";
+            try{
+                lib = object.get("library").toString();
+            }catch (Exception e){}
+
+            if(lib.isEmpty()){
+                library = null;
+            }else {
+                library = object.get("library").toString().toLowerCase().split(",");
+            }
+
+            String cle = "";
+            try{
+                cle = object.get("clean").toString();
+                Boolean.parseBoolean(object.get("clean").toString());
+            }catch (Exception e){}
+
+            if(cle.isEmpty()){
+                clean = true;
+            }else {
+                clean = Boolean.parseBoolean(object.get("clean").toString());
             }
 
             makeFolders();
@@ -86,7 +148,9 @@ public class DNA {
                 if(spell != null) {
                     for (int i = 0; i < spell.length; i++) {
                         if (!(new File(System.getProperty("user.dir") + "\\conf\\dic\\" + spell[i] + ".zip").exists())) {
-                            dowload(spell[i]);
+                            try {
+                                dowload(spell[i]);
+                            }catch (Exception e){}
                         }
                     }
                 }
@@ -98,6 +162,8 @@ public class DNA {
                 }
 
             }
+
+            cleanFiles();
 
         }else {
             Consol.blue(Talk.formatText(Talk.Message("DNA1", "en", "info"),"text"));
@@ -115,6 +181,8 @@ public class DNA {
             warning = false;
             company = null;
             folder = null;
+            library = null;
+            clean = false;
         }
 
     }
@@ -158,7 +226,8 @@ public class DNA {
                    "  \"warning\":true,\n" +
                    "  \"company\":\"org.myapp\",\n" +
                    "  \"folder\": \"model,view,controller,res,raw\",\n" +
-                   "  \"library\":\"on proces\"\n" +
+                   "  \"library\":\"on proces\",\n"+
+                   "  \"clean\": true\n" +
                    "}");
            out.close();
         } catch (Exception e) {}
@@ -298,6 +367,31 @@ public class DNA {
 
         return isDowload;
     }
+    private void cleanFiles(){
+        if (clean){
+            File file = new File(System.getProperty("user.dir") + "/conf/dic/");
+            File[] files = file.listFiles();
+
+            for (int i = 0; i < files.length; i++) {
+
+                if (!(exist(files[i].getName().substring(0,files[i].getName().lastIndexOf("."))))){
+                    Consol.blue("existe "+files[i].getName());
+                    File fi = new File(files[i].getPath());
+                    fi.delete();
+                }
+            }
+        }
+    }
+    private boolean exist(String name){
+
+        for (int i = 0; i < spell.length; i++) {
+            if (spell[i].equals(name) || name.equals("myspell")){
+                return true;
+            }
+        }
+
+        return false;
+    }
 
 }
 
@@ -306,19 +400,25 @@ class Talk {
     private static JSONArray readMessages() {
         JSONArray data = null;
         Path path = new Path();
-        try{
+        BufferedReader in = null;
+        try {
             JSONParser parser = new JSONParser();
-            BufferedReader in = new BufferedReader(new InputStreamReader(path.getPath(), "utf-8"));
+            in = new BufferedReader(new InputStreamReader(path.getPath(), "utf-8"));
             data = (JSONArray) parser.parse(in);
-        }catch (FileNotFoundException | ParseException ex){
+        } catch (FileNotFoundException | ParseException ex) {
             System.err.println(ex.getMessage());
         } catch (IOException ex) {
             System.out.print(ex.getMessage());
+        } finally {
+            try {
+                in.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
         return data;
     }
-
 
     public static String Message(String categorie, String language, String type){
 

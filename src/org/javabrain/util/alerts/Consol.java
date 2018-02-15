@@ -6,7 +6,7 @@ package org.javabrain.util.alerts;
  */
 public class Consol {
     
-    public static void red(String message){
+    public static void red(Object message){
         System.out.println("\033[31m"+message+"\033[30m");
     }
     
@@ -18,7 +18,7 @@ public class Consol {
         System.out.println("\033[33m"+message+"\033[30m");
     }
     
-    public static void blue(String message){
+    public static void blue(Object message){
         System.out.println("\033[34m"+message+"\033[30m");
     }
 

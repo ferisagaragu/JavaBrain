@@ -6,5 +6,6 @@
   "warning":true,
   "company":"org.myapp",
   "folder": "model,view,controller,res,raw",
-  "library":"on proces"
+  "library":"on proces",
+  "clean": true
 }
