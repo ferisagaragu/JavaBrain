@@ -25,7 +25,6 @@ public class DNA {
     public final boolean warning;
     public final String company;
     public final String[] folder;
-    public final String[] library;
     public final boolean clean;
      
     private DNA() {
@@ -116,17 +115,6 @@ public class DNA {
                 folder = object.get("folder").toString().toLowerCase().split(",");
             }
 
-            String lib = "";
-            try{
-                lib = object.get("library").toString();
-            }catch (Exception e){}
-
-            if(lib.isEmpty()){
-                library = null;
-            }else {
-                library = object.get("library").toString().toLowerCase().split(",");
-            }
-
             String cle = "";
             try{
                 cle = object.get("clean").toString();
@@ -147,7 +135,7 @@ public class DNA {
 
                 if(spell != null) {
                     for (int i = 0; i < spell.length; i++) {
-                        if (!(new File(System.getProperty("user.dir") + "\\conf\\dic\\" + spell[i] + ".zip").exists())) {
+                        if (!(new File(System.getProperty("user.dir").replace("lib","") + "\\conf\\dic\\" + spell[i] + ".zip").exists())) {
                             try {
                                 dowload(spell[i]);
                             }catch (Exception e){}
@@ -156,7 +144,7 @@ public class DNA {
                 }
 
                 if(fount != null) {
-                    if (!(new File((System.getProperty("user.dir") + "\\conf\\fount\\" + fount[0] + ".ttf").toLowerCase()).exists())) {
+                    if (!(new File((System.getProperty("user.dir").replace("lib","") + "\\conf\\fount\\" + fount[0] + ".ttf").toLowerCase()).exists())) {
                         fount(fount[0]);
                     }
                 }
@@ -174,14 +162,13 @@ public class DNA {
             Consol.green(Talk.formatText(Talk.Message("DNA2", "es", "info"),"text"));
 
             System.exit(0);
-            language = "";
+            language = null;
             download = false;
             spell = null;
             fount = null;
             warning = false;
             company = null;
             folder = null;
-            library = null;
             clean = false;
         }
 
@@ -200,7 +187,7 @@ public class DNA {
 
         try{
             JSONParser parser = new JSONParser();
-            in = new BufferedReader(new InputStreamReader(new FileInputStream((System.getProperty("user.dir")+"/conf/neuron.json").replace("/","\\")), "utf-8"));
+            in = new BufferedReader(new InputStreamReader(new FileInputStream((System.getProperty("user.dir").replace("lib","")+"/conf/neuron.json").replace("/","\\")), "utf-8"));
             object = (JSONObject) parser.parse(in);
             in.close();
         }catch (Exception e){}
@@ -211,13 +198,13 @@ public class DNA {
     //Regeneracion
     private void makeDNA(){
 
-        File folder = new File(System.getProperty("user.dir") + "\\conf\\dic");
-        File folder2 = new File(System.getProperty("user.dir") + "\\conf\\fount");
+        File folder = new File(System.getProperty("user.dir").replace("lib","") + "\\conf\\dic");
+        File folder2 = new File(System.getProperty("user.dir").replace("lib","") + "\\conf\\fount");
 
         try {
            folder.mkdirs();
            folder2.mkdirs();
-           BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream((System.getProperty("user.dir") + "/conf/neuron.json").replace("/", "\\")), "utf-8"));
+           BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream((System.getProperty("user.dir").replace("lib","") + "/conf/neuron.json").replace("/", "\\")), "utf-8"));
            out.write("{\n" +
                    "  \"language\":\"es\",\n" +
                    "  \"download\":true,\n" +
@@ -235,11 +222,11 @@ public class DNA {
     }
     private void makeDic(){
 
-        File folder = new File(System.getProperty("user.dir") + "\\conf\\dic\\myspell.dic");
+        File folder = new File(System.getProperty("user.dir").replace("lib","") + "\\conf\\dic\\myspell.dic");
 
         if (!folder.exists()) {
             try {
-                BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream((System.getProperty("user.dir") + "/conf/dic/myspell.dic").replace("/", "\\")), "utf-8"));
+                BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream((System.getProperty("user.dir").replace("lib","") + "/conf/dic/myspell.dic").replace("/", "\\")), "utf-8"));
                 out.write("Java,\n" +
                         "Brain");
                 out.close();
@@ -250,11 +237,11 @@ public class DNA {
     }
     private void makePath(){
 
-        File folder = new File(System.getProperty("user.dir") + "\\conf\\path.json");
+        File folder = new File(System.getProperty("user.dir").replace("lib","") + "\\conf\\path.json");
 
         if (!folder.exists()) {
             try {
-                BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream((System.getProperty("user.dir") + "/conf/path.json").replace("/", "\\")), "utf-8"));
+                BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream((System.getProperty("user.dir").replace("lib","") + "/conf/path.json").replace("/", "\\")), "utf-8"));
                 out.write("{\n" +
                         "  \"img\":\"\",\n" +
                         "  \"raw\":\"\",\n" +
@@ -273,21 +260,21 @@ public class DNA {
 
     }
     private void makeFolders(){
-        File fold = new File(System.getProperty("user.dir") +"\\src\\"+company.replace(".","\\"));
+        File fold = new File(System.getProperty("user.dir").replace("lib","") +"\\src\\"+company.replace(".","\\"));
         fold.mkdirs();
 
         if(folder != null) {
             for (int i = 0; i < folder.length; i++) {
-                File folder2 = new File(System.getProperty("user.dir") + "\\src\\" + company.replace(".", "\\") + "\\" + folder[i]);
+                File folder2 = new File(System.getProperty("user.dir").replace("lib","") + "\\src\\" + company.replace(".", "\\") + "\\" + folder[i]);
                 folder2.mkdirs();
             }
         }
 
-        File folder2 = new File(System.getProperty("user.dir") +"\\src\\Run");
+        File folder2 = new File(System.getProperty("user.dir").replace("lib","") +"\\src\\run");
         folder2.mkdirs();
 
-        File fold3 = new File(System.getProperty("user.dir") + "\\conf\\dic");
-        File fold4 = new File(System.getProperty("user.dir") + "\\conf\\fount");
+        File fold3 = new File(System.getProperty("user.dir").replace("lib","") + "\\conf\\dic");
+        File fold4 = new File(System.getProperty("user.dir").replace("lib","") + "\\conf\\fount");
         fold3.mkdirs();
         fold4.mkdirs();
     }
@@ -306,7 +293,7 @@ public class DNA {
             URLConnection urlCon = url.openConnection();
 
             is = urlCon.getInputStream();
-            inf = new FileOutputStream(System.getProperty("user.dir")+"\\conf\\dic\\"+data[data.length-1]);
+            inf = new FileOutputStream(System.getProperty("user.dir").replace("lib","")+"\\conf\\dic\\"+data[data.length-1]);
 
             byte[] array = new byte[1000];
             int leido = is.read(array);
@@ -344,7 +331,7 @@ public class DNA {
             URLConnection urlCon = url.openConnection();
 
             is = urlCon.getInputStream();
-            inf = new FileOutputStream(System.getProperty("user.dir")+"\\conf\\fount\\"+data[data.length-1]);
+            inf = new FileOutputStream(System.getProperty("user.dir").replace("lib","")+"\\conf\\fount\\"+data[data.length-1]);
 
             byte[] array = new byte[1000];
             int leido = is.read(array);
@@ -369,13 +356,12 @@ public class DNA {
     }
     private void cleanFiles(){
         if (clean){
-            File file = new File(System.getProperty("user.dir") + "/conf/dic/");
+            File file = new File(System.getProperty("user.dir").replace("lib","") + "/conf/dic/");
             File[] files = file.listFiles();
 
             for (int i = 0; i < files.length; i++) {
 
                 if (!(exist(files[i].getName().substring(0,files[i].getName().lastIndexOf("."))))){
-                    Consol.blue("existe "+files[i].getName());
                     File fi = new File(files[i].getPath());
                     fi.delete();
                 }

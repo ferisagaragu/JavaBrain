@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="GitHub:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/java-brain.jar</output-path>
+    <output-path>$PROJECT_DIR$/out/artifacts/java-brain</output-path>
     <root id="archive" name="GitHub.jar">
       <element id="module-output" name="GitHub" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/jmy-spell-master.jar" path-in-jar="/" />
