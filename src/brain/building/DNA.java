@@ -18,6 +18,7 @@ import java.net.URLConnection;
 public class DNA {
 
     //Publics
+    public final String title;
     public final String language;
     public final boolean download;
     public final String[] spell;
@@ -26,11 +27,23 @@ public class DNA {
     public final String company;
     public final String[] folder;
     public final boolean clean;
-     
+
     private DNA() {
 
         if(read() != null) {
             JSONObject object = read();
+
+            String titl = "";
+            try{
+                titl = object.get("title").toString();
+            }catch (Exception e){}
+
+            if(titl.isEmpty()){
+                title = "No hay titulo...";
+            }
+            else{
+                title = object.get("title").toString();
+            }
 
             String lang = "";
             try{
@@ -162,6 +175,7 @@ public class DNA {
             Consol.green(Talk.formatText(Talk.Message("DNA2", "es", "info"),"text"));
 
             System.exit(0);
+            title = null;
             language = null;
             download = false;
             spell = null;
@@ -206,6 +220,7 @@ public class DNA {
            folder2.mkdirs();
            BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream((System.getProperty("user.dir").replace("lib","") + "/conf/neuron.json").replace("/", "\\")), "utf-8"));
            out.write("{\n" +
+                   "  \"title\":\"\",\n"+
                    "  \"language\":\"es\",\n" +
                    "  \"download\":true,\n" +
                    "  \"spell\":\"es_MX,en_US\",\n" +
@@ -214,7 +229,8 @@ public class DNA {
                    "  \"company\":\"org.myapp\",\n" +
                    "  \"folder\": \"model,view,controller,res,raw\",\n" +
                    "  \"library\":\"on proces\",\n"+
-                   "  \"clean\": true\n" +
+                   "  \"clean\": true,\n" +
+                   "  \"dist\": false\n"+
                    "}");
            out.close();
         } catch (Exception e) {}
