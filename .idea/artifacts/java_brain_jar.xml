@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="GitHub:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/GitHub_jar</output-path>
-    <root id="archive" name="GitHub.jar">
+  <artifact type="jar" build-on-make="true" name="java-brain:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/java-brain</output-path>
+    <root id="archive" name="java-brain.jar">
       <element id="module-output" name="GitHub" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/jsoup-1.11.2.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/jmy-spell-master.jar" path-in-jar="/" />

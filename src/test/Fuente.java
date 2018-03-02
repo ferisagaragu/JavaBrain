@@ -28,8 +28,8 @@ public class Fuente {
             System.out.println(fuentes[i]);
         }
         
-        NewJFrame frame = new NewJFrame();
-        frame.setVisible(true);
+        /*NewJFrame frame = new NewJFrame();
+        frame.setVisible(true);*/
     }
     
 }
