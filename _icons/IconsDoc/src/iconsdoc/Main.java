@@ -143,7 +143,7 @@ public class Main {
             System.out.println(list1);
             
             File fil = new File(System.getProperty("user.dir")+"\\"+list1);
-            fil.renameTo(new File(list1.replace("_100px_1", "").replace("_100px_2", "").replace("icons8_","").replace("_100px","").toLowerCase().replace(".png", ".bcon").replace("'","")));
+            fil.renameTo(new File(list1.replace("_100px_1", "").replace("_100px_2", "").replace("icons8_","").replace("_100px","").toLowerCase().replace(".png", ".bcon").replace("'","").replace("-","_")));
         }
         
         doc();

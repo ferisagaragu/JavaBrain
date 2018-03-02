@@ -21,13 +21,18 @@ public class Bcon extends ImageIcon{
     }
     
     public ImageIcon px(int escale){
-        
-        ImageIcon icon = new ImageIcon(img.getImage().getScaledInstance(escale,escale,Image.SCALE_SMOOTH));
+        ImageIcon icon = null;
+        try{
+            icon = new ImageIcon(img.getImage().getScaledInstance(escale,escale,Image.SCALE_SMOOTH));
+        }catch(Exception e){}
         return icon;
     }
     
     public ImageIcon px(int scaleW,int scaleH){
-        ImageIcon icon = new ImageIcon(img.getImage().getScaledInstance(scaleW,scaleH,Image.SCALE_SMOOTH));
+        ImageIcon icon = null;
+        try{
+            icon = new ImageIcon(img.getImage().getScaledInstance(scaleW,scaleH,Image.SCALE_SMOOTH));
+        }catch(Exception e){}
         return icon;
     }
     
