@@ -1,0 +1,8 @@
+<!-- drawable/currency_kzt.xml -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:height="24dp"
+    android:width="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path android:fillColor="#000" android:pathData="M5,3H19V5H5V3M5,6H19V8H13V21H11V8H5V6Z" />
+</vector>

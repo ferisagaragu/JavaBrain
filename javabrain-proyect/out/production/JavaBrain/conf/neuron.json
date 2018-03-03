@@ -1,0 +1,13 @@
+{
+  "title":"",
+  "language":"es",
+  "download":true,
+  "spell":"es_MX,en_US",
+  "fount":"roboto ti-20 tx-16 ts-12",
+  "warning":true,
+  "company":"org.myapp",
+  "folder": "model,view,controller,res,raw",
+  "library":"on proces",
+  "clean": true,
+  "dist": false
+}
