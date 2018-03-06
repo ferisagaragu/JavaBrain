@@ -17,29 +17,31 @@ public class Valuta {
 
     private static Scraping s = new Scraping();
 
-    public static String mnxToUsdType(double mnx){
-        DecimalFormat df = new DecimalFormat("#.0000 USD");
-        double a = mnx / s.map.get("usd");
+    public static String mnxToUsdType(float mnx){
+        DecimalFormat df = new DecimalFormat("#.00 USD");
+        float a = mnx / s.map.get("usd");
         return df.format(a);
     }
 
-    public static String usdToMnxType(double usd){
-        DecimalFormat df = new DecimalFormat("#.0000 MNX");
-        double a = usd * s.map.get("usd");
+    public static String usdToMnxType(float usd){
+        DecimalFormat df = new DecimalFormat("#.00 MNX");
+        float a = usd * s.map.get("usd");
         return df.format(a);
     }
 
-    public static double mnxToUsd(double mnx){
-        return mnx / s.map.get("usd");
+    public static float mnxToUsd(float mnx){
+        DecimalFormat df = new DecimalFormat("#.00");
+        return Float.parseFloat(df.format(mnx / s.map.get("usd")));
     }
 
-    public static double usdToMnx(double usd){
-        return usd * s.map.get("usd");
+    public static float usdToMnx(float usd){
+        DecimalFormat df = new DecimalFormat("#.00");
+        return Float.parseFloat(df.format(usd * s.map.get("usd")));
     }
 
     public static void main(String[] args) {
-        System.out.println(usdToMnxType(70.00));
-        System.out.println(mnxToUsd(50.00));
+        System.out.println(usdToMnxType(7545.00f));
+        System.out.println(mnxToUsd(50.00f));
     }
 }
 
@@ -47,7 +49,7 @@ class Scraping{
 
     public final String url = "https://www.hsbc.com.mx/1/2/es/personas/divisas";
     public final int maxPages = 2;
-    public Map<String,Double> map = new HashMap();
+    public Map<String,Float> map = new HashMap();
 
     public Scraping() {
 
@@ -61,7 +63,7 @@ class Scraping{
                 Elements entradas = document.select("div.grid.grid_24");
                 String data = entradas.get(1).getElementsByClass("vdp_tableStyle").text();
                 String div = data
-                .replace("Divisas A la compra A la Venta Dólar Americano $ ","")
+                .replace("Divisas A la compra A la Venta Dólar Americano $","")
                 .replace("Euro","")
                 .replace("Libra Esterlina","")
                 .replace("Yen Japonés","")
@@ -71,18 +73,16 @@ class Scraping{
                 .replace("Dólar Canadiense","")
                 .replace(" ","")
                 .replace("$",",");
-                String[] divs = div.substring(1).split(",");
+                String[] divs = div.split(",");
 
-                for (int j = 0; j < divs.length; j++) {
-                    String div1 = divs[j];
-                    System.out.println(div1+" "+j);
-                }
-
-
-                map.put("usd",Double.parseDouble(divs[1]));
-                map.put("eur",Double.parseDouble(divs[3]));
-                map.put("gbp",Double.parseDouble(divs[5]));//Libra esterlina
-
+                map.put("usd",Float.parseFloat(divs[1]));
+                map.put("eur",Float.parseFloat(divs[3]));
+                map.put("gbp",Float.parseFloat(divs[5]));//Libra esterlina
+                map.put("jpy",Float.parseFloat(divs[7]));
+                map.put("cny",Float.parseFloat(divs[9]));
+                map.put("brl",Float.parseFloat(divs[11]));
+                map.put("cad",Float.parseFloat(divs[13]));
+ 
             }else{
                 System.out.println("El Status Code no es OK es: "+getStatusConnectionCode(urlPage));
                 break;
