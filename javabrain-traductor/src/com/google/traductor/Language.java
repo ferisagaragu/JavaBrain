@@ -14,6 +14,9 @@ public class Language extends Object{
 
     public static Language SPANISH =  new Language("es");
     public static Language ENGLISH = new Language("en");
+    public static Language FRENCH = new Language("fr");
+    public static Language ITALIAN = new Language("it");
+    public static Language PORTUGUESE = new Language("pt");
     
     private String type;
 
