@@ -16,7 +16,12 @@ import org.jsoup.select.Elements;
 public class Valuta {
 
     private static Scraping s = new Scraping();
-
+    
+    public static final float USDBUY = s.map.get("usd-buy");
+    public static final float USDSELL = s.map.get("usd");
+    
+    
+    
     public static String mnxToUsdType(float mnx){
         DecimalFormat df = new DecimalFormat("#.00 USD");
         float a = mnx / s.map.get("usd");
@@ -39,10 +44,6 @@ public class Valuta {
         return Float.parseFloat(df.format(usd * s.map.get("usd")));
     }
 
-    public static void main(String[] args) {
-        System.out.println(usdToMnxType(7545.00f));
-        System.out.println(mnxToUsd(50.00f));
-    }
 }
 
 class Scraping{
@@ -75,6 +76,7 @@ class Scraping{
                 .replace("$",",");
                 String[] divs = div.split(",");
 
+                map.put("usd-buy",Float.parseFloat(divs[0]));
                 map.put("usd",Float.parseFloat(divs[1]));
                 map.put("eur",Float.parseFloat(divs[3]));
                 map.put("gbp",Float.parseFloat(divs[5]));//Libra esterlina
