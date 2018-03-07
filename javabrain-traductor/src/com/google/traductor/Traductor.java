@@ -40,7 +40,7 @@ public class Traductor {
     }
     
     
-    public static String traslate(Language pastto,String text){
+    public static String autoTraslate(Language pastto,String text){
         URL url;
         String linea = "";
         String newline = "";

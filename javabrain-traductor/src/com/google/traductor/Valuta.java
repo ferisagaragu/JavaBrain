@@ -277,8 +277,6 @@ public class Valuta {
     }
     //</editor-fold>
 
-  
-
 }
 
 class Scraping{

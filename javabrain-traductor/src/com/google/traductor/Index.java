@@ -8,8 +8,8 @@ public class Index extends Frame{
 
     public Index() {
         initComponents();
-        jLabel1.setText(Traductor.traslate(Language.FRENCH,"hola amigo como estas"));
-        System.out.println(Traductor.traslate(Language.ENGLISH,"divisa"));
+        jLabel1.setText(Traductor.autoTraslate(Language.ENGLISH,"hola amigo como estas"));
+        System.out.println(Traductor.autoTraslate(new Language("zh-CN"),"hola amigo como estas"));
     }
 
     @SuppressWarnings("unchecked")
