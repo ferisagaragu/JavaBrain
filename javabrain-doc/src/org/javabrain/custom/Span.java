@@ -16,6 +16,7 @@ public class Span extends JPanel{
         spanColor = new java.awt.Color(92, 184, 92); System.out.println(spanColor.getRed());
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(0, 3, 0, 0,spanColor), javax.swing.BorderFactory.createMatteBorder(1, 0, 1, 1, new java.awt.Color(204, 204, 204))));
+        setSize(500,100);
     }
 
     public Color getSpanColor() {
