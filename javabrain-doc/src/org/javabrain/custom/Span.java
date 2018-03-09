@@ -34,8 +34,9 @@ public class Span extends JPanel{
 
     public void setTitle(Title spanTitle) {
         this.title = spanTitle;
-        String text = "<html><body><b style=\"color:"+String.format("#%02x%02x%02x",spanColor.getRed(),spanColor.getGreen(),spanColor.getBlue())+";\">"+this.title.getText()+"</b></body></html>";
+        String text = this.title.getText();
         this.title.setText(text);
+        this.title.setForeground(spanColor);
     }
     
 }

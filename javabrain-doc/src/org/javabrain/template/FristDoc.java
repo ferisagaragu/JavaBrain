@@ -1,8 +1,15 @@
 package org.javabrain.template;
 
+import java.awt.Color;
 import java.awt.Font;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
+import javax.swing.JRadioButtonMenuItem;
 import org.javabrain.custom.Frame;
+import org.javabrain.model.ComponentTranslate;
+import org.javabrain.model.ControlType;
+import org.javabrain.model.Language;
+import org.javabrain.model.Traductor;
 
 /**
  *
@@ -10,25 +17,64 @@ import org.javabrain.custom.Frame;
  */
 public class FristDoc extends Frame {
 
+    private ArrayList<ComponentTranslate> traslates;
+    
     public FristDoc() {
         initComponents();
-        Font font = new Font("Helvetica 35 Thin",0,16);
+        traslates = new ArrayList<>();
+        Font font = new Font("Helvetica 35 Thin", 0, 16);
         button1.setFont(font);
-        span6.setTitle(title7);
+        span6.setTitle(title6);
         setTitle("Brain Doc");
         setIconImage(new ImageIcon(getClass().getResource("/javadoc/icon.png")).getImage());
+
+        plainText7.setText("<html><p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas \"Letraset\", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.¿Por qué lo usamos?\n"
+                + "Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo \"Contenido aquí, contenido aquí\". Estos textos hacen parecerlo un español que se puede leer. Muchos paquetes de autoedición y editores de páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda de \"Lorem Ipsum\" va a dar por resultado muchos sitios web que usan este texto si se encuentran en estado de desarrollo. Muchas versiones han evolucionado a través de los años, algunas veces por accidente, otras veces a propósito (por ejemplo insertándole humor y cosas por el estilo).\n"
+                + "\n"
+                + "\n"
+                + "¿De dónde viene?\n"
+                + "Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente texto aleatorio. Tiene sus raices en una pieza cl´sica de la literatura del Latin, que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000 años de antiguedad. Richard McClintock, un profesor de Latin de la Universidad de Hampden-Sydney en Virginia, encontró una de las palabras más oscuras de la lengua del latín, \"consecteur\", en un pasaje de Lorem Ipsum, y al seguir leyendo distintos textos del latín, descubrió la fuente indudable. Lorem Ipsum viene de las secciones 1.10.32 y 1.10.33 de \"de Finnibus Bonorum et Malorum\" (Los Extremos del Bien y El Mal) por Cicero, escrito en el año 45 antes de Cristo. Este libro es un tratado de teoría de éticas, muy popular durante el Renacimiento. La primera linea del Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", viene de una linea en la sección 1.10.32\n"
+                + "\n"
+                + "El trozo de texto estándar de Lorem Ipsum usado desde el año 1500 es reproducido debajo para aquellos interesados. Las secciones 1.10.32 y 1.10.33 de \"de Finibus Bonorum et Malorum\" por Cicero son también reproducidas en su forma original exacta, acompañadas por versiones en Inglés de la traducción realizada en 1914 por H. Rackham.\n"
+                + "\n"
+                + "¿Dónde puedo conseguirlo?\n"
+                + "Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayoría sufrió alteraciones en alguna manera, ya sea porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles. Si vas a utilizar un pasaje de Lorem Ipsum, necesitás estar seguro de que no hay nada avergonzante escondido en el medio del texto. Todos los generadores de Lorem Ipsum que se encuentran en Internet tienden a repetir trozos predefinidos cuando sea necesario, haciendo a este el único generador verdadero (válido) en la Internet. Usa un diccionario de mas de 200 palabras provenientes del latín, combinadas con estructuras muy útiles de sentencias, para generar texto de Lorem Ipsum que parezca razonable. Este Lorem Ipsum generado siempre estará libre de repeticiones, humor agregado o palabras no características del lenguaje, etc.</p></html>");
+
+        for (Language object : Language.LANGUAGES) {
+            JRadioButtonMenuItem item = new JRadioButtonMenuItem(object.getName());
+            item.setFont(font);
+            item.setBackground(Color.white);
+            jMenu2.add(item);
+        }
+        jMenu1.setFont(font);
+        jMenu2.setFont(font);
+        jMenu1.setText("<html><b>Archivo</b></html>");
+        jMenu2.setText("<html><b>Lenguages</b></html>");
         
-        plainText7.setText("<html><p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas \"Letraset\", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.¿Por qué lo usamos?\n" +
-"Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo \"Contenido aquí, contenido aquí\". Estos textos hacen parecerlo un español que se puede leer. Muchos paquetes de autoedición y editores de páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda de \"Lorem Ipsum\" va a dar por resultado muchos sitios web que usan este texto si se encuentran en estado de desarrollo. Muchas versiones han evolucionado a través de los años, algunas veces por accidente, otras veces a propósito (por ejemplo insertándole humor y cosas por el estilo).\n" +
-"\n" +
-"\n" +
-"¿De dónde viene?\n" +
-"Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente texto aleatorio. Tiene sus raices en una pieza cl´sica de la literatura del Latin, que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000 años de antiguedad. Richard McClintock, un profesor de Latin de la Universidad de Hampden-Sydney en Virginia, encontró una de las palabras más oscuras de la lengua del latín, \"consecteur\", en un pasaje de Lorem Ipsum, y al seguir leyendo distintos textos del latín, descubrió la fuente indudable. Lorem Ipsum viene de las secciones 1.10.32 y 1.10.33 de \"de Finnibus Bonorum et Malorum\" (Los Extremos del Bien y El Mal) por Cicero, escrito en el año 45 antes de Cristo. Este libro es un tratado de teoría de éticas, muy popular durante el Renacimiento. La primera linea del Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", viene de una linea en la sección 1.10.32\n" +
-"\n" +
-"El trozo de texto estándar de Lorem Ipsum usado desde el año 1500 es reproducido debajo para aquellos interesados. Las secciones 1.10.32 y 1.10.33 de \"de Finibus Bonorum et Malorum\" por Cicero son también reproducidas en su forma original exacta, acompañadas por versiones en Inglés de la traducción realizada en 1914 por H. Rackham.\n" +
-"\n" +
-"¿Dónde puedo conseguirlo?\n" +
-"Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayoría sufrió alteraciones en alguna manera, ya sea porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles. Si vas a utilizar un pasaje de Lorem Ipsum, necesitás estar seguro de que no hay nada avergonzante escondido en el medio del texto. Todos los generadores de Lorem Ipsum que se encuentran en Internet tienden a repetir trozos predefinidos cuando sea necesario, haciendo a este el único generador verdadero (válido) en la Internet. Usa un diccionario de mas de 200 palabras provenientes del latín, combinadas con estructuras muy útiles de sentencias, para generar texto de Lorem Ipsum que parezca razonable. Este Lorem Ipsum generado siempre estará libre de repeticiones, humor agregado o palabras no características del lenguaje, etc.</p></html>");
+        traslates.add(new ComponentTranslate(ControlType.BUTTON,button1));
+        traslates.add(new ComponentTranslate(ControlType.LABEL,plainText1));
+        traslates.add(new ComponentTranslate(ControlType.LABEL,plainText2));
+        traslates.add(new ComponentTranslate(ControlType.LABEL,plainText3));
+        traslates.add(new ComponentTranslate(ControlType.LABEL,plainText4));
+        traslates.add(new ComponentTranslate(ControlType.LABEL,plainText5));
+        traslates.add(new ComponentTranslate(ControlType.LABEL,plainText7));
+        traslates.add(new ComponentTranslate(ControlType.LABEL,plainText8));
+        traslates.add(new ComponentTranslate(ControlType.LABEL,plainText9));
+        traslates.add(new ComponentTranslate(ControlType.LABEL,plainText10));
+        traslates.add(new ComponentTranslate(ControlType.LABEL,plainText11));
+        traslates.add(new ComponentTranslate(ControlType.LABEL,plainText12));
+        traslates.add(new ComponentTranslate(ControlType.LABEL,plainText13));
+        traslates.add(new ComponentTranslate(ControlType.LABEL,plainText14));
+        traslates.add(new ComponentTranslate(ControlType.LABEL, plainText15));
+        
+        traslates.add(new ComponentTranslate(ControlType.LABEL,title1));
+        traslates.add(new ComponentTranslate(ControlType.LABEL,title3));
+        traslates.add(new ComponentTranslate(ControlType.LABEL,title4));
+        traslates.add(new ComponentTranslate(ControlType.LABEL,title5));
+        traslates.add(new ComponentTranslate(ControlType.LABEL,title6));
+        traslates.add(new ComponentTranslate(ControlType.LABEL,title8));
+        traslates.add(new ComponentTranslate(ControlType.LABEL,title9));
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -44,13 +90,16 @@ public class FristDoc extends Frame {
         jPanel2 = new javax.swing.JPanel();
         plainText5 = new org.javabrain.custom.PlainText();
         plainText6 = new org.javabrain.custom.PlainText();
+        plainText13 = new org.javabrain.custom.PlainText();
+        plainText14 = new org.javabrain.custom.PlainText();
         title2 = new org.javabrain.custom.Title();
         plainText3 = new org.javabrain.custom.PlainText();
         scrollPane1 = new org.javabrain.custom.ScrollPane();
         jPanel4 = new javax.swing.JPanel();
         span6 = new org.javabrain.custom.Span();
-        title7 = new org.javabrain.custom.Title();
         plainText1 = new org.javabrain.custom.PlainText();
+        plainText15 = new org.javabrain.custom.PlainText();
+        title6 = new org.javabrain.custom.Title();
         plainText2 = new org.javabrain.custom.PlainText();
         jPanel3 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
@@ -74,9 +123,14 @@ public class FristDoc extends Frame {
         plainText11 = new org.javabrain.custom.PlainText();
         jPanel18 = new javax.swing.JPanel();
         jPanel19 = new javax.swing.JPanel();
-        title10 = new org.javabrain.custom.Title();
+        title3 = new org.javabrain.custom.Title();
         plainText12 = new org.javabrain.custom.PlainText();
         button1 = new org.javabrain.swing.control.Button();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
+        jRadioButtonMenuItem2 = new javax.swing.JRadioButtonMenuItem();
+        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(700, 500));
@@ -103,7 +157,7 @@ public class FristDoc extends Frame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(plainText4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel7)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel8)
@@ -131,7 +185,14 @@ public class FristDoc extends Frame {
 
         plainText6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         plainText6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/javabrain/template/api.png"))); // NOI18N
-        plainText6.setText("<html>    <body>           <p>0.0.1 <b style=\"color:#0275D8;\">estable</b></p>    </body> </html>");
+
+        plainText13.setForeground(new java.awt.Color(2, 117, 216));
+        plainText13.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        plainText13.setText("estable");
+        plainText13.setFont(new java.awt.Font("Helvetica 35 Thin", 1, 16)); // NOI18N
+
+        plainText14.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        plainText14.setText("0.0.1");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -140,18 +201,28 @@ public class FristDoc extends Frame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(plainText5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(plainText6)
+                .addGap(85, 85, 85)
+                .addComponent(plainText6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(plainText14, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(plainText13, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(plainText5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(plainText6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(plainText13, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(plainText14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(plainText6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(plainText5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         title2.setText("Traductor");
@@ -167,9 +238,13 @@ public class FristDoc extends Frame {
 
         span6.setSpanColor(new java.awt.Color(170, 103, 8));
 
-        title7.setText("Contribuyentes");
+        plainText1.setText("<html>   <body>     <ul>       <li type=\"circle\">Google company</li>       <li type=\"circle\">statickidz.com</li>     </ul>       </body> </html>"); // NOI18N
 
-        plainText1.setText("<html>   <body>     <ul>       <li type=\"circle\">Google company</li>       <li type=\"circle\">statickidz.com</li>     </ul>     <p style=\"font-size:11; color: gray;\">Todos los servicios y codigos fuentes son propiedad de dichas compañias       y <b>Java Brain</b> agradece sus servicios     </p>   </body> </html>");
+        plainText15.setForeground(new java.awt.Color(204, 204, 204));
+        plainText15.setText("<html><b>Servicio php</b> y <b>Gooogle Translate</b> son propiedad de dichas compañias y <b>Java Brain</b> agradece sus servicios </html>");
+        plainText15.setFont(new java.awt.Font("Helvetica 35 Thin", 0, 11)); // NOI18N
+
+        title6.setText("Creditos");
 
         javax.swing.GroupLayout span6Layout = new javax.swing.GroupLayout(span6);
         span6.setLayout(span6Layout);
@@ -178,19 +253,20 @@ public class FristDoc extends Frame {
             .addGroup(span6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(span6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(span6Layout.createSequentialGroup()
-                        .addComponent(title7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(plainText1))
+                    .addComponent(plainText1, javax.swing.GroupLayout.DEFAULT_SIZE, 591, Short.MAX_VALUE)
+                    .addComponent(plainText15)
+                    .addComponent(title6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         span6Layout.setVerticalGroup(
             span6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(span6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(title7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(title6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(plainText1)
+                .addComponent(plainText1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(plainText15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -277,8 +353,8 @@ public class FristDoc extends Frame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(plainText8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(plainText8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel10.setBackground(new java.awt.Color(255, 255, 255));
@@ -415,21 +491,21 @@ public class FristDoc extends Frame {
 
         jPanel19.setBackground(new java.awt.Color(242, 222, 222));
 
-        title10.setForeground(new java.awt.Color(169, 68, 66));
-        title10.setText("Exepciones");
+        title3.setForeground(new java.awt.Color(169, 68, 66));
+        title3.setText("Excepciones");
 
         javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
         jPanel19.setLayout(jPanel19Layout);
         jPanel19Layout.setHorizontalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel19Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel19Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(title10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(title3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(title10, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+            .addComponent(title3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         plainText12.setText("Aquí va un listado de exepciones que pueda tener la clase");
@@ -477,7 +553,7 @@ public class FristDoc extends Frame {
                 .addComponent(plainText2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -489,13 +565,37 @@ public class FristDoc extends Frame {
                 .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(span6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         scrollPane1.setViewportView(jPanel4);
 
         button1.setText("Tengo un problema");
         button1.setMode(7);
+        button1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button1ActionPerformed(evt);
+            }
+        });
+
+        jMenu1.setBackground(new java.awt.Color(255, 255, 255));
+        jMenu1.setText("File");
+
+        jRadioButtonMenuItem1.setBackground(new java.awt.Color(255, 255, 255));
+        jRadioButtonMenuItem1.setSelected(true);
+        jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
+        jMenu1.add(jRadioButtonMenuItem1);
+
+        jRadioButtonMenuItem2.setSelected(true);
+        jRadioButtonMenuItem2.setText("jRadioButtonMenuItem2");
+        jMenu1.add(jRadioButtonMenuItem2);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Edit");
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -537,12 +637,16 @@ public class FristDoc extends Frame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(plainText3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(scrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE)
+                .addComponent(scrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
+        Traductor.traslateComponet(traslates, Language.ENGLISH);
+    }//GEN-LAST:event_button1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private org.javabrain.swing.control.Button button1;
@@ -550,6 +654,9 @@ public class FristDoc extends Frame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -565,10 +672,15 @@ public class FristDoc extends Frame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem2;
     private org.javabrain.custom.PlainText plainText1;
     private org.javabrain.custom.PlainText plainText10;
     private org.javabrain.custom.PlainText plainText11;
     private org.javabrain.custom.PlainText plainText12;
+    private org.javabrain.custom.PlainText plainText13;
+    private org.javabrain.custom.PlainText plainText14;
+    private org.javabrain.custom.PlainText plainText15;
     private org.javabrain.custom.PlainText plainText2;
     private org.javabrain.custom.PlainText plainText3;
     private org.javabrain.custom.PlainText plainText4;
@@ -580,11 +692,11 @@ public class FristDoc extends Frame {
     private org.javabrain.custom.ScrollPane scrollPane1;
     private org.javabrain.custom.Span span6;
     private org.javabrain.custom.Title title1;
-    private org.javabrain.custom.Title title10;
     private org.javabrain.custom.Title title2;
+    private org.javabrain.custom.Title title3;
     private org.javabrain.custom.Title title4;
     private org.javabrain.custom.Title title5;
-    private org.javabrain.custom.Title title7;
+    private org.javabrain.custom.Title title6;
     private org.javabrain.custom.Title title8;
     private org.javabrain.custom.Title title9;
     // End of variables declaration//GEN-END:variables
