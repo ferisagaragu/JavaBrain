@@ -17,36 +17,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="WebView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/javabrain/swing/container/WebView.java">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="20" column="35" lean-forward="false" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+            <state relative-caret-position="62">
+              <caret line="2" column="21" lean-forward="false" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
               <folding>
-                <element signature="e#426#427#0" expanded="true" />
-                <element signature="e#468#469#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DNA.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/brain/building/DNA.java">
+      <file leaf-file-name="Traductor.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/org/javabrain/util/web/service/Traductor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6138">
-              <caret line="208" column="20" lean-forward="false" selection-start-line="208" selection-start-column="20" selection-end-line="208" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+            <state relative-caret-position="392">
+              <caret line="243" column="21" lean-forward="false" selection-start-line="243" selection-start-column="21" selection-end-line="243" selection-end-column="21" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#traslate#0;class#Traductor#0" expanded="false" />
+                <element signature="method#autoTraslate#0;class#Traductor#0" expanded="false" />
+                <element signature="method#addComponent#0;class#Traductor#0" expanded="false" />
+                <element signature="method#removeComponent#0;class#Traductor#0" expanded="false" />
+                <element signature="method#clearComponent#0;class#Traductor#0" expanded="false" />
+                <element signature="method#setComponent#0;class#Traductor#0" expanded="false" />
+                <element signature="method#sizeListComponents#0;class#Traductor#0" expanded="false" />
+                <element signature="method#getListComponents#0;class#Traductor#0" expanded="false" />
+                <element signature="method#traslateList#0;class#Traductor#0" expanded="false" />
+                <element signature="method#autoTraslateList#0;class#Traductor#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -67,6 +65,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>getc</find>
+      <find>button</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -80,9 +79,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/org/javabrain/general/formats/Text2.java" />
-        <option value="$PROJECT_DIR$/src/org/javabrain/general/formats/Spell.java" />
-        <option value="$PROJECT_DIR$/src/org/javabrain/general/formats/Text.java" />
         <option value="$PROJECT_DIR$/src/org/javabrain/util/formats/Text.java" />
         <option value="$PROJECT_DIR$/config/paths.json" />
         <option value="$PROJECT_DIR$/config/neuron.json" />
@@ -118,7 +114,6 @@
         <option value="$PROJECT_DIR$/src/org/javabrain/swing/control/Tag.java" />
         <option value="$PROJECT_DIR$/src/org/javabrain/swing/control/Button.java" />
         <option value="$PROJECT_DIR$/src/org/javabrain/swing/container/Frame.java" />
-        <option value="$PROJECT_DIR$/src/brain/building/DNA.java" />
         <option value="$PROJECT_DIR$/src/test/Fuente.java" />
         <option value="$PROJECT_DIR$/mergeable-code/Corrector.java" />
         <option value="$PROJECT_DIR$/mergeable_code/Fuente.java" />
@@ -130,7 +125,11 @@
         <option value="$PROJECT_DIR$/src/org/javabrain/util/resources/url/icon/IconColorURL.java" />
         <option value="$PROJECT_DIR$/src/org/javabrain/swing/container/WebView.java" />
         <option value="$PROJECT_DIR$/src/Run.java" />
+        <option value="$PROJECT_DIR$/src/org/javabrain/util/collection/Traslate.java" />
+        <option value="$PROJECT_DIR$/src/org/javabrain/util/web/service/Language.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/brain/building/DNA.java" />
+        <option value="$PROJECT_DIR$/src/org/javabrain/util/web/service/Traductor.java" />
       </list>
     </option>
   </component>
@@ -169,7 +168,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator currentView="PackagesPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -183,42 +182,19 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
-      <pane id="PackagesPane">
+      <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="JavaBrain" type="58d84e3e:PackageViewProjectNode" />
-              <item name="GitHub" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="JavaBrain" type="58d84e3e:PackageViewProjectNode" />
-              <item name="GitHub" type="616d4139:PackageViewModuleNode" />
-              <item name="org.javabrain" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="JavaBrain" type="58d84e3e:PackageViewProjectNode" />
-              <item name="GitHub" type="616d4139:PackageViewModuleNode" />
-              <item name="org.javabrain" type="1f31426a:PackageElementNode" />
-              <item name="swing" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="JavaBrain" type="58d84e3e:PackageViewProjectNode" />
-              <item name="GitHub" type="616d4139:PackageViewModuleNode" />
-              <item name="org.javabrain" type="1f31426a:PackageElementNode" />
-              <item name="swing" type="1f31426a:PackageElementNode" />
-              <item name="control" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="JavaBrain" type="58d84e3e:PackageViewProjectNode" />
-              <item name="GitHub" type="616d4139:PackageViewModuleNode" />
-              <item name="test" type="1f31426a:PackageElementNode" />
+              <item name="JavaBrain" type="b2602c69:ProjectViewProjectNode" />
+              <item name="javabrain-proyect" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -247,17 +223,38 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane">
+      <pane id="PackagesPane">
         <subPane>
           <expand>
             <path>
-              <item name="JavaBrain" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javabrain-proyect" type="462c0819:PsiDirectoryNode" />
+              <item name="JavaBrain" type="58d84e3e:PackageViewProjectNode" />
+              <item name="JavaBrain" type="616d4139:PackageViewModuleNode" />
             </path>
             <path>
-              <item name="JavaBrain" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javabrain-proyect" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="JavaBrain" type="58d84e3e:PackageViewProjectNode" />
+              <item name="JavaBrain" type="616d4139:PackageViewModuleNode" />
+              <item name="org.javabrain" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="JavaBrain" type="58d84e3e:PackageViewProjectNode" />
+              <item name="JavaBrain" type="616d4139:PackageViewModuleNode" />
+              <item name="org.javabrain" type="1f31426a:PackageElementNode" />
+              <item name="util" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="JavaBrain" type="58d84e3e:PackageViewProjectNode" />
+              <item name="JavaBrain" type="616d4139:PackageViewModuleNode" />
+              <item name="org.javabrain" type="1f31426a:PackageElementNode" />
+              <item name="util" type="1f31426a:PackageElementNode" />
+              <item name="web" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="JavaBrain" type="58d84e3e:PackageViewProjectNode" />
+              <item name="JavaBrain" type="616d4139:PackageViewModuleNode" />
+              <item name="org.javabrain" type="1f31426a:PackageElementNode" />
+              <item name="util" type="1f31426a:PackageElementNode" />
+              <item name="web" type="1f31426a:PackageElementNode" />
+              <item name="service" type="1f31426a:PackageElementNode" />
             </path>
           </expand>
           <select />
@@ -266,7 +263,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -282,22 +279,22 @@
     <property name="last_directory_selection" value="$PROJECT_DIR$/mergeable-code" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Fernando García\Documents\GitHub\JavaBrain\javabrain-proyect\src\org\javabrain\swing\container" />
-      <recent name="C:\Users\Fernando García\Documents\GitHub\JavaBrain\src\res" />
-      <recent name="C:\Users\Fernando García\Documents\GitHub\JavaBrain\src\org\javabrain\swing\control" />
-      <recent name="C:\Users\Fernando García\Documents\GitHub\JavaBrain\src\org" />
-      <recent name="C:\Users\Fernando García\Documents\GitHub\JavaBrain\.idea\libraries" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Fernando García\Documents\GitHub\JavaBrain\mergeable-code" />
       <recent name="C:\Users\Fernando García\Documents\GitHub\JavaBrain\src\org\javabrain\swing\custom\color" />
       <recent name="C:\Users\Fernando García\Documents\GitHub\JavaBrain\conf" />
       <recent name="C:\Users\Fernando García\Documents\GitHub\JavaBrain" />
       <recent name="C:\Users\Fernando García\Documents\GitHub\JavaBrain\src\img" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Fernando García\Documents\GitHub\JavaBrain\javabrain-proyect\src\org\javabrain\util\web\service" />
+      <recent name="C:\Users\Fernando García\Documents\GitHub\JavaBrain\javabrain-proyect\src\org\javabrain\swing\container" />
+      <recent name="C:\Users\Fernando García\Documents\GitHub\JavaBrain\src\res" />
+      <recent name="C:\Users\Fernando García\Documents\GitHub\JavaBrain\src\org\javabrain\swing\control" />
+      <recent name="C:\Users\Fernando García\Documents\GitHub\JavaBrain\src\org" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -552,13 +549,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6928105" sideWeight="0.50680786" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6928105" sideWeight="0.49319214" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6911765" sideWeight="0.49319214" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15733737" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1785174" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -570,6 +566,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -603,39 +600,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.idea/.name">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/dictionaries/Fernando_García.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/uiDesigner.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3415">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -806,39 +775,72 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Run.java" />
+    <entry file="file://$PROJECT_DIR$/src/org/javabrain/util/collection/Traslate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/javabrain/swing/container/WebView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="403">
-          <caret line="20" column="35" lean-forward="false" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
-          <folding>
-            <element signature="e#426#427#0" expanded="true" />
-            <element signature="e#468#469#0" expanded="true" />
-          </folding>
+          <caret line="32" column="37" lean-forward="false" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/javabrain/util/web/service/Language.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="6" column="41" lean-forward="false" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/brain/building/DNA.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6138">
-          <caret line="208" column="20" lean-forward="false" selection-start-line="208" selection-start-column="20" selection-end-line="208" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Run.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="9" selection-end-column="55" />
+        <state relative-caret-position="7939">
+          <caret line="523" column="0" lean-forward="true" selection-start-line="523" selection-start-column="0" selection-end-line="523" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+        <state relative-caret-position="62">
+          <caret line="2" column="21" lean-forward="false" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/javabrain/util/web/service/Traductor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="243" column="21" lean-forward="false" selection-start-line="243" selection-start-column="21" selection-end-line="243" selection-end-column="21" />
+          <folding>
+            <element signature="method#traslate#0;class#Traductor#0" expanded="false" />
+            <element signature="method#autoTraslate#0;class#Traductor#0" expanded="false" />
+            <element signature="method#addComponent#0;class#Traductor#0" expanded="false" />
+            <element signature="method#removeComponent#0;class#Traductor#0" expanded="false" />
+            <element signature="method#clearComponent#0;class#Traductor#0" expanded="false" />
+            <element signature="method#setComponent#0;class#Traductor#0" expanded="false" />
+            <element signature="method#sizeListComponents#0;class#Traductor#0" expanded="false" />
+            <element signature="method#getListComponents#0;class#Traductor#0" expanded="false" />
+            <element signature="method#traslateList#0;class#Traductor#0" expanded="false" />
+            <element signature="method#autoTraslateList#0;class#Traductor#0" expanded="false" />
           </folding>
         </state>
       </provider>

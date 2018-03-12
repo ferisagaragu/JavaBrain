@@ -1,15 +1,12 @@
 package org.javabrain.template;
 
-import java.awt.Color;
 import java.awt.Font;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
-import javax.swing.JRadioButtonMenuItem;
 import org.javabrain.custom.Frame;
 import org.javabrain.model.ComponentTranslate;
-import org.javabrain.model.ControlType;
-import org.javabrain.model.Language;
-import org.javabrain.model.Traductor;
+import org.javabrain.util.web.service.Language;
+import org.javabrain.util.web.service.Traductor;
 
 /**
  *
@@ -39,19 +36,8 @@ public class FristDoc extends Frame {
                 + "\n"
                 + "¿Dónde puedo conseguirlo?\n"
                 + "Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayoría sufrió alteraciones en alguna manera, ya sea porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles. Si vas a utilizar un pasaje de Lorem Ipsum, necesitás estar seguro de que no hay nada avergonzante escondido en el medio del texto. Todos los generadores de Lorem Ipsum que se encuentran en Internet tienden a repetir trozos predefinidos cuando sea necesario, haciendo a este el único generador verdadero (válido) en la Internet. Usa un diccionario de mas de 200 palabras provenientes del latín, combinadas con estructuras muy útiles de sentencias, para generar texto de Lorem Ipsum que parezca razonable. Este Lorem Ipsum generado siempre estará libre de repeticiones, humor agregado o palabras no características del lenguaje, etc.</p></html>");
-
-        for (Language object : Language.LANGUAGES) {
-            JRadioButtonMenuItem item = new JRadioButtonMenuItem(object.getName());
-            item.setFont(font);
-            item.setBackground(Color.white);
-            jMenu2.add(item);
-        }
-        jMenu1.setFont(font);
-        jMenu2.setFont(font);
-        jMenu1.setText("<html><b>Archivo</b></html>");
-        jMenu2.setText("<html><b>Lenguages</b></html>");
         
-        traslates.add(new ComponentTranslate(ControlType.BUTTON,button1));
+       /* traslates.add(new ComponentTranslate(ControlType.BUTTON,button1));
         traslates.add(new ComponentTranslate(ControlType.LABEL,plainText1));
         traslates.add(new ComponentTranslate(ControlType.LABEL,plainText2));
         traslates.add(new ComponentTranslate(ControlType.LABEL,plainText3));
@@ -73,8 +59,9 @@ public class FristDoc extends Frame {
         traslates.add(new ComponentTranslate(ControlType.LABEL,title5));
         traslates.add(new ComponentTranslate(ControlType.LABEL,title6));
         traslates.add(new ComponentTranslate(ControlType.LABEL,title8));
-        traslates.add(new ComponentTranslate(ControlType.LABEL,title9));
-        
+        traslates.add(new ComponentTranslate(ControlType.LABEL,title9));*/
+        Traductor.addComponent(button1);
+        Traductor.addComponent(plainText2);
     }
 
     @SuppressWarnings("unchecked")
@@ -645,7 +632,7 @@ public class FristDoc extends Frame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
-        Traductor.traslateComponet(traslates, Language.ENGLISH);
+        Traductor.autoTraslateList(Language.ENGLISH);
     }//GEN-LAST:event_button1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
