@@ -1,8 +1,8 @@
 package org.javabrain.util.alerts;
 
 /**
- *
- * @author QualtopGroup
+ * @author Fernando García
+ * @version 0.0.1
  */
 public class Console {
     
