@@ -1,119 +1,224 @@
 package org.javabrain.util.data;
 
+import org.javabrain.util.alerts.Console;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import java.io.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.Map;
 
+/***
+ * @author Fernando García
+ * @version 0.0.1
+ */
 public class JSON {
 
-    private static final JSONParser parser = new JSONParser();
+    private JSONParser parser;
+    private JSONObject obj;
+    private JSONArray array;
 
-    public static JSONObject parser(Object obj)
-    {
-        JSONObject jsono = null;
+    //CONSTRUCTORES
+    public JSON(){
+        parser = new JSONParser();
+        try {
+            obj = (org.json.simple.JSONObject) parser.parse("{}");
+        } catch (ParseException e) {}
+    }
+
+    public JSON(Object json) {
+        parser = new JSONParser();
+        if(json.toString().charAt(0) == '['){
+            try {
+                array = (org.json.simple.JSONArray) parser.parse(json.toString());
+            } catch (ParseException e) {}
+        }else {
+            try {
+                obj = (org.json.simple.JSONObject) parser.parse(json.toString());
+            } catch (ParseException e) {}
+        }
+
+    }
+
+    //================================================================
+
+    //METODOS GET
+
+    public String getString(Object key){
+        return obj.get(key).toString();
+    }
+
+    public int getInteger(Object key){
+        return Integer.parseInt(obj.get(key).toString());
+    }
+
+    public float getFloat(Object key){
+        return Float.parseFloat(obj.get(key).toString());
+    }
+
+    public boolean getBoolean(Object key){
+        return Boolean.parseBoolean(obj.get(key).toString());
+    }
+
+    public char getCharacter(Object key){
+        return obj.get(key).toString().charAt(0);
+    }
+
+    public double getDouble(Object key){
+        return Double.parseDouble(obj.get(key).toString());
+    }
+
+    public Object getObject(Object key){
+        return obj.get(key);
+    }
+
+    public JSON getJSONArray(Object key, int index){
+        JSONArray array = null;
+
+        try{array = (JSONArray) parser.parse(obj.get(key).toString());}catch (Exception e){}
+
+        return new JSON(array.get(index));
+    }
+
+    public JSON getJSONArray(int index){
+        return new JSON(array.get(index));
+    }
+
+    //===============================================================
+
+    //METODOS SET
+
+    public void setJSON(Object json) {
+        if(json.toString().charAt(0) == '['){
+            try {
+                array = (org.json.simple.JSONArray) parser.parse(json.toString());
+            } catch (ParseException e) {}
+        }else {
+            try {
+                obj = (org.json.simple.JSONObject) parser.parse(json.toString());
+            } catch (ParseException e) {}
+        }
+    }
+
+    //===============================================================
+
+    //METODOS DE ACCION
+
+    public void remove(Object key){
+        obj.remove(key);
+    }
+
+    public int size(){
+        return obj.size();
+    }
+
+    public Object replace(Object key, Object value){
+        return obj.replace(key,value);
+    }
+
+    public Object replaceJSONArray(Object key, Map<Object,Object> objects){
+        Object ob = null;
+        String data = "";
+        Iterator it = objects.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry e = (Map.Entry)it.next();
+            data += "{\""+e.getKey()+"\":\"" + e.getValue()+"\"},";
+        }
+        data = "["+data.substring(0,data.length()-1)+"]";
 
         try {
-            jsono = (JSONObject) parser.parse(obj.toString());
-        } catch (ParseException ex) {
-            Logger.getLogger(JSON.class.getName()).log(Level.SEVERE, null, ex);
+            ob = obj.replace(key,(JSONArray) parser.parse(data));
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
 
-        return jsono;
+        return  ob;
     }
 
-    public static JSONArray read(String fileName)
-    {
-        JSONArray data = null;
-
-        try
-        {
-            JSONParser parser = new JSONParser();
-            BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream((System.getProperty("user.dir")+fileName+".json").replace("/","\\")), "utf-8"));
-            data = (JSONArray) parser.parse(in);
+    public Object putInJSONArray(Object key,Map<Object,Object> objects){
+        Object ob = null;
+        String data = obj.get(key).toString().substring(1,obj.get(key).toString().length()-1);
+        Iterator it = objects.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry e = (Map.Entry)it.next();
+            data += "{\""+e.getKey()+"\":\"" + e.getValue()+"\"},";
         }
-        catch (FileNotFoundException | ParseException ex)
-        {
-            System.err.println(ex.getMessage());
-        } catch (IOException ex) {
-            Logger.getLogger(JSON.class.getName()).log(Level.SEVERE, null, ex);
+        data = data.replace(",","");
+        data = data.replace("}","},");
+        data = data.substring(0,data.length()-1);
+        data = "["+data+"]";
+        try {
+            ob = obj.replace(key,(JSONArray) parser.parse(data));
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
 
-        return data;
+        return  ob;
     }
 
-    public static JSONArray generate(String fileName,String JSON)
-    {
-        JSONArray data = null;
-        JSONParser parser = new JSONParser();
+    public String getKey(int index) {
+        int i = 0;
+        for (Object sets:obj.keySet()) {
+            Console.blue(i + "  "+index);
+            if(i == index){
+                return sets.toString();
+            }
+            i++;
+        }
+        return null;
+    }
+
+    public Collection getKeys(){
+        ArrayList<Object> keys = new ArrayList<>();
+        Collection collection = new ArrayList();
+        for (Object sets:obj.keySet()) {
+            collection.add(sets);
+        }
+        return collection;
+    }
+
+    public String toJSONString(){
+        return obj.toJSONString();
+    }
+
+    public Object putJSON(Object key, Object value){
+        return obj.put(key,value);
+    }
+
+    public Object putJSONArray(Object key, Map<Object,Object> objects){
+        Object ob = null;
+        String data = "";
+        Iterator it = objects.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry e = (Map.Entry)it.next();
+            data += "{\""+e.getKey()+"\":\"" + e.getValue()+"\"},";
+        }
+        data = "["+data.substring(0,data.length()-1)+"]";
 
         try {
-            BufferedWriter out =
-                    new BufferedWriter(new OutputStreamWriter(new FileOutputStream(System.getProperty("user.dir")+"\\data\\"+fileName+".json".replace("/","\\")), "utf-8"));
-            out.write(JSON.replace("\\","").replace("\"{","{").replace("}\"","}"));
-            out.close();
-
-            data = (JSONArray)parser.parse(JSON);
-
-        } catch (UnsupportedEncodingException ex) {
-            Logger.getLogger(JSON.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(JSON.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ParseException | IOException ex) {
-            Logger.getLogger(JSON.class.getName()).log(Level.SEVERE, null, ex);
+            ob = obj.put(key,(JSONArray) parser.parse(data));
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
 
-        return data;
+         return  ob;
     }
 
-    public static JSONArray where(JSONArray array,String idJSON,String match){
-
-        JSONArray array2 = new JSONArray();
-
-        for (Object obj : array){
-
-            JSONObject js = parser(obj);
-
-            if(js.get(idJSON).toString().toLowerCase().equals(match.toLowerCase()))
-            {
-                array2.add(obj);
-            }
-        }
-
-        return array2;
+    public Collection values(){
+        return obj.values();
     }
 
-    public static JSONArray join(JSONArray array,JSONArray arrayJoin,String idJSON,String idJSON2,String match){
+    //===============================================================
 
-        JSONArray  nArray = new JSONArray();
-
-        for (Object obj1 : array) {
-
-            JSONObject js1 = parser(obj1);
-
-            for (Object obj2 : arrayJoin) {
-
-                JSONObject js2 = parser(obj2);
-
-                if(js1.get(idJSON).toString().toLowerCase().equals(match.toLowerCase())&&
-                        js2.get(idJSON2).toString().toLowerCase().equals(match.toLowerCase()))
-                {
-                    nArray.add(parser(js1.toString().replace("}",js2.toString().replace("{",",").replace("\"id\"","\"idjoin\""))));
-                }
-
-            }
-
-        }
-
-        return nArray;
-    }
+    //METODOS PRIVADOS
+    //==============================================================
 
 
-
-
-
+    //FALTA LEER JSON DE ARCHIVO
+    //ESCRIBIR JSON A ARCHIVO
+    //TIPEAR EL BSON "HACER EN OTRA CLACE"
 }
+

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/javabrain-proyect.iml" filepath="$PROJECT_DIR$/javabrain-proyect.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/javabrain-doc.iml" filepath="$PROJECT_DIR$/.idea/javabrain-doc.iml" />
     </modules>
   </component>
 </project>

@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="jmy-spell-master">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/jmy-spell-master.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
