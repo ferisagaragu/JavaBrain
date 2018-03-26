@@ -1,11 +1,11 @@
 package org.javabrain.util.data;
 
-import org.javabrain.util.alerts.Console;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -43,6 +43,31 @@ public class JSON {
 
     }
 
+    public JSON(InputStream inputStream) {
+        parser = new JSONParser();
+
+        String out = "";
+        try {
+            BufferedReader in = new BufferedReader(new InputStreamReader(inputStream, "utf-8"));
+            String sCadena = "";
+
+            while ((sCadena = in.readLine())!=null) {
+                out += sCadena;
+            }
+
+        }catch (Exception e){}
+
+        if(out.toString().charAt(0) == '['){
+            try {
+                array = (org.json.simple.JSONArray) parser.parse(out);
+            } catch (ParseException e) {}
+        }else {
+            try {
+                obj = (org.json.simple.JSONObject) parser.parse(out);
+            } catch (ParseException e) {}
+        }
+    }
+
     //================================================================
 
     //METODOS GET
@@ -75,6 +100,10 @@ public class JSON {
         return obj.get(key);
     }
 
+    public JSON getJSON(Object key){
+        return new JSON(obj.get(key));
+    }
+
     public JSON getJSONArray(Object key, int index){
         JSONArray array = null;
 
@@ -85,6 +114,12 @@ public class JSON {
 
     public JSON getJSONArray(int index){
         return new JSON(array.get(index));
+    }
+
+    public JSON getJSONArray(Object key){
+        JSONArray array = null;
+        try{array = (JSONArray) parser.parse(obj.get(key).toString());}catch (Exception e){}
+        return new JSON(array);
     }
 
     //===============================================================
@@ -99,6 +134,29 @@ public class JSON {
         }else {
             try {
                 obj = (org.json.simple.JSONObject) parser.parse(json.toString());
+            } catch (ParseException e) {}
+        }
+    }
+
+    public void read(InputStream inputStream){
+        String out = "";
+        try {
+            BufferedReader in = new BufferedReader(new InputStreamReader(inputStream, "utf-8"));
+            String sCadena = "";
+
+            while ((sCadena = in.readLine())!=null) {
+                out += sCadena;
+            }
+
+        }catch (Exception e){}
+
+        if(out.toString().charAt(0) == '['){
+            try {
+                array = (org.json.simple.JSONArray) parser.parse(out);
+            } catch (ParseException e) {}
+        }else {
+            try {
+                obj = (org.json.simple.JSONObject) parser.parse(out);
             } catch (ParseException e) {}
         }
     }
@@ -162,7 +220,6 @@ public class JSON {
     public String getKey(int index) {
         int i = 0;
         for (Object sets:obj.keySet()) {
-            Console.blue(i + "  "+index);
             if(i == index){
                 return sets.toString();
             }
@@ -181,6 +238,11 @@ public class JSON {
     }
 
     public String toJSONString(){
+
+        if(obj == null){
+            return array.toJSONString();
+        }
+
         return obj.toJSONString();
     }
 
@@ -211,14 +273,32 @@ public class JSON {
         return obj.values();
     }
 
+    public boolean write(String path){
+        try {
+            BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path), "utf-8"));
+            out.write(toJSONString().toString().replace("\\","").replace("\"{","{").replace("}\"","}"));
+            out.close();
+            return true;
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
     //===============================================================
 
     //METODOS PRIVADOS
     //==============================================================
 
-
-    //FALTA LEER JSON DE ARCHIVO
-    //ESCRIBIR JSON A ARCHIVO
+    //Versión 0.0.2 ->
+    //{"path":{"img":"/config/","file":"/config/","json":"/db/"}}
+    //AGREGAR JSONSELECT
+    //AGREGAR JSONJOIN
     //TIPEAR EL BSON "HACER EN OTRA CLACE"
 }
 
