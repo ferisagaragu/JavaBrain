@@ -8,7 +8,6 @@ import javax.swing.JScrollPane;
 import javax.swing.text.JTextComponent;
 
 /**
- *
  * @author Fernando García
  */
 public class Frame extends JFrame{
@@ -56,7 +55,7 @@ public class Frame extends JFrame{
         }
     }
 
-    public void enabledComponents(Component[] components,boolean in){
+    private void enabledComponents(Component[] components,boolean in){
         for (Component component : components) {
             component.setEnabled(in);
 
