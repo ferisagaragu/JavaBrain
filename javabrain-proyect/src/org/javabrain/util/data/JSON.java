@@ -117,6 +117,23 @@ public class JSON {
         return new JSON(array.get(index));
     }
 
+    public Object[] getArray(Object key){
+        Object[] dat = null;
+        if(getString(key).charAt(0) == '['){
+           String dato = getString(key).replace("[","").replace("]","");
+           dat = dato.split(",");
+            for (int i = 0; i < dat.length; i++) {
+                if(dat[i].toString().equals("\"\"")){
+                    dat[i] = "";
+                }else {
+                    dat[i] = dat[i].toString().replace("\"","");
+                }
+            }
+        }
+        return dat;
+    }
+
+
     public JSON getJSONArray(Object key){
         JSONArray array = null;
         try{array = (JSONArray) parser.parse(obj.get(key).toString());}catch (Exception e){}
@@ -194,6 +211,11 @@ public class JSON {
     }
 
     public int size(){
+
+        if(obj == null){
+            return array.size();
+        }
+
         return obj.size();
     }
 
@@ -293,8 +315,20 @@ public class JSON {
          return  ob;
     }
 
-    public Collection values(){
-        return obj.values();
+    public ArrayList<JSON> values(){
+        ArrayList<JSON> list = new ArrayList<>();
+
+        if (obj == null){
+            for (Object object:array.toArray()) {
+                list.add(new JSON(object));
+            }
+        }else {
+            for (Object object:obj.values()) {
+                list.add(new JSON(object));
+            }
+        }
+
+        return list;
     }
 
     public boolean write(String path){
