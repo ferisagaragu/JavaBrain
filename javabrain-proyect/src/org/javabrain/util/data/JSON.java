@@ -156,52 +156,6 @@ public class JSON {
         }
     }
 
-    public void read(InputStream inputStream){
-        String out = "";
-        try {
-            BufferedReader in = new BufferedReader(new InputStreamReader(inputStream, "utf-8"));
-            String sCadena = "";
-
-            while ((sCadena = in.readLine())!=null) {
-                out += sCadena;
-            }
-
-        }catch (Exception e){}
-
-        if(out.toString().charAt(0) == '['){
-            try {
-                array = (org.json.simple.JSONArray) parser.parse(out);
-            } catch (ParseException e) {}
-        }else {
-            try {
-                obj = (org.json.simple.JSONObject) parser.parse(out);
-            } catch (ParseException e) {}
-        }
-    }
-
-    public void read(String jsonFile){
-        String out = "";
-        try {
-            BufferedReader in = new BufferedReader(new InputStreamReader(Path.getJson(jsonFile), "utf-8"));
-            String sCadena = "";
-
-            while ((sCadena = in.readLine())!=null) {
-                out += sCadena;
-            }
-
-        }catch (Exception e){}
-
-        if(out.toString().charAt(0) == '['){
-            try {
-                array = (org.json.simple.JSONArray) parser.parse(out);
-            } catch (ParseException e) {}
-        }else {
-            try {
-                obj = (org.json.simple.JSONObject) parser.parse(out);
-            } catch (ParseException e) {}
-        }
-    }
-
     //===============================================================
 
     //METODOS DE ACCION
@@ -348,6 +302,64 @@ public class JSON {
         return false;
     }
 
+    public void read(InputStream inputStream){
+        String out = "";
+        try {
+            BufferedReader in = new BufferedReader(new InputStreamReader(inputStream, "utf-8"));
+            String sCadena = "";
+
+            while ((sCadena = in.readLine())!=null) {
+                out += sCadena;
+            }
+
+        }catch (Exception e){}
+
+        if(out.toString().charAt(0) == '['){
+            try {
+                array = (org.json.simple.JSONArray) parser.parse(out);
+            } catch (ParseException e) {}
+        }else {
+            try {
+                obj = (org.json.simple.JSONObject) parser.parse(out);
+            } catch (ParseException e) {}
+        }
+    }
+
+    public void read(String jsonFile){
+        String out = "";
+        try {
+            BufferedReader in = new BufferedReader(new InputStreamReader(Path.getJson(jsonFile), "utf-8"));
+            String sCadena = "";
+
+            while ((sCadena = in.readLine())!=null) {
+                out += sCadena;
+            }
+
+        }catch (Exception e){}
+
+        if(out.toString().charAt(0) == '['){
+            try {
+                array = (org.json.simple.JSONArray) parser.parse(out);
+            } catch (ParseException e) {}
+        }else {
+            try {
+                obj = (org.json.simple.JSONObject) parser.parse(out);
+            } catch (ParseException e) {}
+        }
+    }
+
+    public ArrayList<JSON> exclude(int index){
+        int i = 0;
+        ArrayList<JSON> al = new ArrayList<>();
+        for (JSON json : values()) {
+            if(i != index){
+                al.add(json);
+            }
+            i++;
+        }
+        return al;
+    }
+
     //===============================================================
 
     //METODOS PRIVADOS
@@ -359,4 +371,3 @@ public class JSON {
     //AGREGAR JSONJOIN
     //TIPEAR EL BSON "HACER EN OTRA CLACE"
 }
-
