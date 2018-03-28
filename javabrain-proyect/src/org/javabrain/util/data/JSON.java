@@ -8,10 +8,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
 /***
  * @author Fernando García
@@ -161,7 +158,6 @@ public class JSON {
 
     //METODOS DE ACCION
 
-    //Falta agregar para el array
     public void remove(Object key){
         obj.remove(key);
     }
@@ -175,7 +171,6 @@ public class JSON {
         return obj.size();
     }
 
-    //Falta agregar para el array
     public Object replace(Object key, Object value){
         return obj.replace(key,value);
     }
@@ -250,6 +245,15 @@ public class JSON {
     }
 
     public String toJSONString(){
+
+        if(obj == null){
+            return array.toJSONString();
+        }
+
+        return obj.toJSONString();
+    }
+
+    public String toString(){
 
         if(obj == null){
             return array.toJSONString();
@@ -381,5 +385,6 @@ public class JSON {
     //AGREGAR JSONSELECT
     //AGREGAR JSONJOIN
     //AGREGAR METODOS PARA EL ARRAR DONDE SOLO HAY OBJ
+    //METODO PARA ORDENAR EL JSON
     //TIPEAR EL BSON "HACER EN OTRA CLACE"
 }
