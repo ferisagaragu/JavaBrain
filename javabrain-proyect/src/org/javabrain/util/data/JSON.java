@@ -161,6 +161,7 @@ public class JSON {
 
     //METODOS DE ACCION
 
+    //Falta agregar para el array
     public void remove(Object key){
         obj.remove(key);
     }
@@ -174,6 +175,7 @@ public class JSON {
         return obj.size();
     }
 
+    //Falta agregar para el array
     public Object replace(Object key, Object value){
         return obj.replace(key,value);
     }
@@ -376,8 +378,8 @@ public class JSON {
     //==============================================================
 
     //Versión 0.0.2 ->
-    //{"path":{"img":"/config/","file":"/config/","json":"/db/"}}
     //AGREGAR JSONSELECT
     //AGREGAR JSONJOIN
+    //AGREGAR METODOS PARA EL ARRAR DONDE SOLO HAY OBJ
     //TIPEAR EL BSON "HACER EN OTRA CLACE"
 }
