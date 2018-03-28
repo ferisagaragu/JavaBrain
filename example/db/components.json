@@ -1,0 +1,62 @@
+{  
+   "result": [
+        {"columns":{"id":"#","cuadrilla":"Cuadrilla"}},
+        {
+            "ubicaciontecnica": "Calle Pablo Valdez 756, La Perla, Guadalajara, Jalisco, México",
+            "latitud": "20.681728103277315",
+            "municipio": "ptm",
+            "cuadrilla": "MC23 RETROEXCAVADORA",
+            "prioridad": "1",
+            "codificacion": "1070",
+            "colonia": "La Perla",
+            "longitud": "-103.3282754671875",
+            "estatus": "Terminado",
+            "observaciones": "yes",
+            "numeroaviso": " 000001",
+            "noticedate": "2018-03-23 00:00:00",
+            "codigocuadrilla": null,
+            "usuario": "Fer",
+            "id": "1",
+            "sector": "SECTOR HIDALGO",
+            "codingname": "1070 MONITOREO Y CLORACIÓN"
+        },
+        {
+            "ubicaciontecnica": "Calle Canal de San Ramón 1037, Belisario Domínguez, Guadalajara, Jalisco, México",
+            "latitud": "20.686869682265097",
+            "municipio": "Guadalajara",
+            "cuadrilla": "1051 ALBAÑILERIA Y SONDA MANUAL",
+            "prioridad": "1",
+            "codificacion": "1070",
+            "colonia": "Belisario Domínguez",
+            "longitud": "-103.322771703125",
+            "estatus": "2",
+            "observaciones": "hols",
+            "numeroaviso": " 000002",
+            "noticedate": "2018-03-26 00:00:00",
+            "codigocuadrilla": null,
+            "usuario": "Fer",
+            "id": "2",
+            "sector": "SECTOR HIDALGO",
+            "codingname": "1070 MONITOREO Y CLORACIÓN"
+        },
+        {
+            "ubicaciontecnica": "Calle Ramón Blancarte 740, Mirador, Guadalajara, Jalisco, México",
+            "latitud": "20.683052382777802",
+            "municipio": "Guadalajara",
+            "cuadrilla": "Sin asignar",
+            "prioridad": "1",
+            "codificacion": "1071",
+            "colonia": "Mirador",
+            "longitud": "-103.31624367080076",
+            "estatus": "1",
+            "observaciones": "a",
+            "numeroaviso": " 000003",
+            "noticedate": "2018-03-26 00:00:00",
+            "codigocuadrilla": "000000",
+            "usuario": "Fer",
+            "id": "3",
+            "sector": "SECTOR HIDALGO",
+            "codingname": "1071 OLOR A GASES TÓXICOS EN EL DRENAJE"
+        }
+   ]
+}
