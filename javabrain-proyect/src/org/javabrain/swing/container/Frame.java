@@ -1,10 +1,11 @@
 package org.javabrain.swing.container;
 
+import org.javabrain.util.alerts.Console;
+import org.javabrain.util.data.JSON;
+
 import java.awt.Color;
 import java.awt.Component;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
+import javax.swing.*;
 import javax.swing.text.JTextComponent;
 
 /**
@@ -17,7 +18,9 @@ public class Frame extends JFrame{
         getContentPane().setBackground(Color.white);
         setSize(600,400);
     }
-    
+
+    //METODOS PUBLICOS
+
     public void showOnCenter(){
         setLocationRelativeTo(null);
         setVisible(true);
@@ -32,6 +35,14 @@ public class Frame extends JFrame{
         try{enabledComponents(this.getContentPane().getComponents(),in);}catch(Exception e){return false;}
         return true;
     }
+
+    public void fillData(JSON json){
+        try {fillDataIn(getContentPane().getComponents(),json); }catch (Exception e){}
+    }
+
+    //==================================================================
+
+    //METODOS PRIVADOS
 
     private void clearText(Component[] components){
         for (Component component : components) {
@@ -72,5 +83,53 @@ public class Frame extends JFrame{
 
         }
     }
+
+    private void fillDataIn(Component[] components,JSON json){
+        for (Component component : components) {
+
+            try{
+                JTextComponent jtc = (JTextComponent) component;
+                if(json.existKey(jtc.getName())){
+                    jtc.setText(json.getObject(jtc.getName()).toString());
+                }
+            }catch(Exception e){}
+
+            try{
+                AbstractButton jtc = (AbstractButton) component;
+                if(json.existKey(jtc.getName())){
+                    jtc.setText(json.getObject(jtc.getName()).toString());
+                }
+            }catch(Exception e){}
+
+            try{
+                JLabel jtc = (JLabel) component;
+                if(json.existKey(jtc.getName())){
+                    jtc.setText(json.getObject(jtc.getName()).toString());
+                }
+            }catch(Exception e){}
+
+            try{
+                JScrollPane j = (JScrollPane) component;
+                fillDataIn(j.getViewport().getComponents(),json);
+            }catch(Exception e){}
+
+            try{
+                JPanel panel = (JPanel) component;
+                fillDataIn(panel.getComponents(),json);
+
+            }catch(Exception e){}
+
+        }
+    }
+
+    //===================================================================
+
+    //HACER
+    /*
+    -Soporte para Listas,Tablas,Combobox y Popups
+    -Usar nomenclaturas como L,T,C,P para distinguir que se refiere
+    a una lista y a que componente se dirije
+    -Hacer la tabla al final ya que es la mas compleja
+     */
     
 }

@@ -1,5 +1,6 @@
 package org.javabrain.util.data;
 
+import org.javabrain.util.alerts.Console;
 import org.javabrain.util.resources.Path;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -250,6 +251,15 @@ public class JSON {
             i++;
         }
         return null;
+    }
+
+    public boolean existKey(Object key) {
+        for (Object sets:getKeys()) {
+            if (sets.toString().equals(key.toString())){
+                return true;
+            }
+        }
+        return false;
     }
 
     public Collection getKeys(){
