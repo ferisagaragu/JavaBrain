@@ -133,8 +133,7 @@ public class JSON {
         }
         return dat;
     }
-
-
+    
     public JSON getJSONArray(Object key){
         JSONArray array = null;
         try{array = (JSONArray) parser.parse(obj.get(key).toString());}catch (Exception e){}
