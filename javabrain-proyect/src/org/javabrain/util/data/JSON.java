@@ -8,10 +8,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
 /***
  * @author Fernando García
@@ -255,6 +252,15 @@ public class JSON {
         return obj.toJSONString();
     }
 
+    public String toString(){
+
+        if(obj == null){
+            return array.toJSONString();
+        }
+
+        return obj.toJSONString();
+    }
+
     public Object putJSON(Object key, Object value){
         return obj.put(key,value);
     }
@@ -375,8 +381,9 @@ public class JSON {
     //==============================================================
 
     //Versión 0.0.2 ->
-    //{"path":{"img":"/config/","file":"/config/","json":"/db/"}}
     //AGREGAR JSONSELECT
     //AGREGAR JSONJOIN
+    //AGREGAR METODOS PARA EL ARRAR DONDE SOLO HAY OBJ
+    //METODO PARA ORDENAR EL JSON
     //TIPEAR EL BSON "HACER EN OTRA CLACE"
 }
