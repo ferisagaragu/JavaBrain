@@ -10,6 +10,7 @@ import javax.swing.text.JTextComponent;
 
 /**
  * @author Fernando García
+ * @version 0.0.1
  */
 public class Frame extends JFrame{
 
