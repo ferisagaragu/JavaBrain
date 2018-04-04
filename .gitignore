@@ -4,3 +4,6 @@
 /javabrain-traductor/dist/
 /javabrain-doc/build/
 /javabrain-doc/dist/
+javabrain-proyect/.idea/workspace.xml
+javabrain-proyect/out/artifacts/java_brain_jar/java-brain.jar
+*.class
