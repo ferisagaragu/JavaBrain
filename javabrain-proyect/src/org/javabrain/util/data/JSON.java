@@ -115,6 +115,12 @@ public class JSON {
         return new JSON(array.get(index));
     }
 
+    public JSON getJSONArray(Object key){
+        JSONArray array = null;
+        try{array = (JSONArray) parser.parse(obj.get(key).toString());}catch (Exception e){}
+        return new JSON(array);
+    }
+
     public Object[] getArray(Object key){
         Object[] dat = null;
         if(getString(key).charAt(0) == '['){
@@ -131,10 +137,13 @@ public class JSON {
         return dat;
     }
     
-    public JSON getJSONArray(Object key){
-        JSONArray array = null;
-        try{array = (JSONArray) parser.parse(obj.get(key).toString());}catch (Exception e){}
-        return new JSON(array);
+    public ArrayList<Object> getList(Object key){
+        ArrayList<Object> list = new ArrayList<>();
+
+        for (Object o:getArray(key)) {
+            list.add(o);
+        }
+        return list;
     }
 
     //===============================================================
