@@ -6,9 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29df6f04-52fa-47bf-aafb-19343119bac5" name="Default" comment="" />
-    <ignored path="$PROJECT_DIR$/out/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="5cbbe14a-8515-4197-a718-1e4d701e445b" name="Default" comment="" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,15 +14,36 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-<<<<<<< HEAD
     <leaf>
       <file leaf-file-name="JSON.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/org/javabrain/util/data/JSON.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-81">
-              <caret line="126" column="31" lean-forward="false" selection-start-line="126" selection-start-column="31" selection-end-line="126" selection-end-column="31" />
+            <state relative-caret-position="-1380">
+              <caret line="138" column="0" lean-forward="true" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#JSON#0;class#JSON#0" expanded="false" />
+                <element signature="method#JSON#1;class#JSON#0" expanded="false" />
+                <element signature="method#JSON#2;class#JSON#0" expanded="false" />
+                <element signature="method#getJSONArray#0;class#JSON#0" expanded="false" />
+                <element signature="method#getJSONArray#2;class#JSON#0" expanded="false" />
+                <element signature="method#getArray#0;class#JSON#0" expanded="false" />
+                <element signature="method#getList#0;class#JSON#0" expanded="false" />
+                <element signature="method#setJSON#0;class#JSON#0" expanded="false" />
+                <element signature="method#size#0;class#JSON#0" expanded="false" />
+                <element signature="method#replaceJSONArray#0;class#JSON#0" expanded="false" />
+                <element signature="method#putInJSONArray#0;class#JSON#0" expanded="false" />
+                <element signature="method#getKey#0;class#JSON#0" expanded="false" />
+                <element signature="method#existKey#0;class#JSON#0" expanded="false" />
+                <element signature="method#getKeys#0;class#JSON#0" expanded="false" />
+                <element signature="method#toJSONString#0;class#JSON#0" expanded="false" />
+                <element signature="method#toString#0;class#JSON#0" expanded="false" />
+                <element signature="method#putJSONArray#0;class#JSON#0" expanded="false" />
+                <element signature="method#values#0;class#JSON#0" expanded="false" />
+                <element signature="method#write#0;class#JSON#0" expanded="false" />
+                <element signature="method#read#0;class#JSON#0" expanded="false" />
+                <element signature="method#read#1;class#JSON#0" expanded="false" />
+                <element signature="method#exclude#0;class#JSON#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -32,31 +51,10 @@
       </file>
     </leaf>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>array</find>
-    </findStrings>
-=======
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
->>>>>>> 02248bbc1581bc2c45d4f6bc7d7e165d886f9919
-  </component>
-  <component name="GradleLocalSettings">
-    <option name="externalProjectsViewState">
-      <projects_view />
-    </option>
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/org/javabrain/util/data/JSON.java" />
-=======
-        <option value="$PROJECT_DIR$/src/bean/ImageViewBeanInfo.java" />
-        <option value="$PROJECT_DIR$/src/bean/PanelImageBeanInfo.java" />
-        <option value="$PROJECT_DIR$/src/org/javabrain/swing/control/PanelImageBeanInfo.java" />
-        <option value="$PROJECT_DIR$/src/org/javabrain/swing/container/Frame.java" />
-        <option value="$PROJECT_DIR$/src/org/javabrain/swing/control/PanelImage.java" />
->>>>>>> 02248bbc1581bc2c45d4f6bc7d7e165d886f9919
       </list>
     </option>
   </component>
@@ -66,22 +64,14 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-<<<<<<< HEAD
   <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
     <option name="height" value="688" />
-=======
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-156" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
->>>>>>> 02248bbc1581bc2c45d4f6bc7d7e165d886f9919
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator currentView="PackagesPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -95,7 +85,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-<<<<<<< HEAD
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -103,36 +92,12 @@
               <item name="JavaBrain" type="58d84e3e:PackageViewProjectNode" />
               <item name="javabrain-proyect" type="616d4139:PackageViewModuleNode" />
             </path>
-            <path>
-              <item name="JavaBrain" type="58d84e3e:PackageViewProjectNode" />
-              <item name="javabrain-proyect" type="616d4139:PackageViewModuleNode" />
-              <item name="org.javabrain" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="JavaBrain" type="58d84e3e:PackageViewProjectNode" />
-              <item name="javabrain-proyect" type="616d4139:PackageViewModuleNode" />
-              <item name="org.javabrain" type="1f31426a:PackageElementNode" />
-              <item name="util" type="1f31426a:PackageElementNode" />
-            </path>
-            <path>
-              <item name="JavaBrain" type="58d84e3e:PackageViewProjectNode" />
-              <item name="javabrain-proyect" type="616d4139:PackageViewModuleNode" />
-              <item name="org.javabrain" type="1f31426a:PackageElementNode" />
-              <item name="util" type="1f31426a:PackageElementNode" />
-              <item name="data" type="1f31426a:PackageElementNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="AndroidView" />
       <pane id="Scratches" />
-=======
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
->>>>>>> 02248bbc1581bc2c45d4f6bc7d7e165d886f9919
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -140,60 +105,15 @@
               <item name="JavaBrain" type="b2602c69:ProjectViewProjectNode" />
               <item name="javabrain-proyect" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="JavaBrain" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javabrain-proyect" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaBrain" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javabrain-proyect" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaBrain" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javabrain-proyect" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaBrain" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javabrain-proyect" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaBrain" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javabrain-proyect" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="javabrain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaBrain" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javabrain-proyect" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="javabrain" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-<<<<<<< HEAD
       <pane id="Scope" />
-=======
->>>>>>> 02248bbc1581bc2c45d4f6bc7d7e165d886f9919
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Brain\JavaBrain\javabrain-proyect\src" />
-    </key>
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -297,34 +217,18 @@
     <configuration />
   </component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="29df6f04-52fa-47bf-aafb-19343119bac5" name="Default" comment="" />
-      <created>1522346236511</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1522346236511</updated>
-      <workItem from="1522689016942" duration="593000" />
-      <workItem from="1522702859961" duration="1628000" />
-      <workItem from="1522706227817" duration="247000" />
-      <workItem from="1522782798555" duration="5678000" />
-    </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-<<<<<<< HEAD
-    <option name="totallyTimeSpent" value="14000" />
-=======
-    <option name="totallyTimeSpent" value="8146000" />
->>>>>>> 02248bbc1581bc2c45d4f6bc7d7e165d886f9919
+    <option name="totallyTimeSpent" value="332000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-<<<<<<< HEAD
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -335,37 +239,15 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19692533" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14934114" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-=======
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17569546" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
->>>>>>> 02248bbc1581bc2c45d4f6bc7d7e165d886f9919
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-<<<<<<< HEAD
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -383,11 +265,6 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-=======
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
->>>>>>> 02248bbc1581bc2c45d4f6bc7d7e165d886f9919
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -398,63 +275,49 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
           <caret line="34" column="47" lean-forward="false" selection-start-line="34" selection-start-column="43" selection-end-line="34" selection-end-column="47" />
-=======
-    <entry file="file://$PROJECT_DIR$/src/org/javabrain/swing/control/PanelImage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#369#370#0" expanded="false" />
-            <element signature="e#459#460#0" expanded="false" />
-            <element signature="e#708#709#0" expanded="false" />
-            <element signature="e#781#782#0" expanded="false" />
-            <element signature="e#810#811#0" expanded="false" />
-            <element signature="e#837#838#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/res/noimg.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/res/beaninfo/canvas16.png" />
-    <entry file="file://$PROJECT_DIR$/src/org/javabrain/swing/control/PanelImageBeanInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
->>>>>>> 02248bbc1581bc2c45d4f6bc7d7e165d886f9919
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/org/javabrain/util/data/JSON.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="125" column="31" lean-forward="false" selection-start-line="125" selection-start-column="31" selection-end-line="125" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#JSON#0;class#JSON#0" expanded="false" />
+            <element signature="method#JSON#1;class#JSON#0" expanded="false" />
+            <element signature="method#JSON#2;class#JSON#0" expanded="false" />
+            <element signature="method#getJSONArray#0;class#JSON#0" expanded="false" />
+            <element signature="method#getJSONArray#2;class#JSON#0" expanded="false" />
+            <element signature="method#getArray#0;class#JSON#0" expanded="false" />
+            <element signature="method#getList#0;class#JSON#0" expanded="false" />
+            <element signature="method#setJSON#0;class#JSON#0" expanded="false" />
+            <element signature="method#size#0;class#JSON#0" expanded="false" />
+            <element signature="method#replaceJSONArray#0;class#JSON#0" expanded="false" />
+            <element signature="method#putInJSONArray#0;class#JSON#0" expanded="false" />
+            <element signature="method#getKey#0;class#JSON#0" expanded="false" />
+            <element signature="method#existKey#0;class#JSON#0" expanded="false" />
+            <element signature="method#getKeys#0;class#JSON#0" expanded="false" />
+            <element signature="method#toJSONString#0;class#JSON#0" expanded="false" />
+            <element signature="method#toString#0;class#JSON#0" expanded="false" />
+            <element signature="method#putJSONArray#0;class#JSON#0" expanded="false" />
+            <element signature="method#values#0;class#JSON#0" expanded="false" />
+            <element signature="method#write#0;class#JSON#0" expanded="false" />
+            <element signature="method#read#0;class#JSON#0" expanded="false" />
+            <element signature="method#read#1;class#JSON#0" expanded="false" />
+            <element signature="method#exclude#0;class#JSON#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -465,6 +328,28 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#JSON#0;class#JSON#0" expanded="false" />
+            <element signature="method#JSON#1;class#JSON#0" expanded="false" />
+            <element signature="method#JSON#2;class#JSON#0" expanded="false" />
+            <element signature="method#getJSONArray#0;class#JSON#0" expanded="false" />
+            <element signature="method#getJSONArray#2;class#JSON#0" expanded="false" />
+            <element signature="method#getArray#0;class#JSON#0" expanded="false" />
+            <element signature="method#getList#0;class#JSON#0" expanded="false" />
+            <element signature="method#setJSON#0;class#JSON#0" expanded="false" />
+            <element signature="method#size#0;class#JSON#0" expanded="false" />
+            <element signature="method#replaceJSONArray#0;class#JSON#0" expanded="false" />
+            <element signature="method#putInJSONArray#0;class#JSON#0" expanded="false" />
+            <element signature="method#getKey#0;class#JSON#0" expanded="false" />
+            <element signature="method#existKey#0;class#JSON#0" expanded="false" />
+            <element signature="method#getKeys#0;class#JSON#0" expanded="false" />
+            <element signature="method#toJSONString#0;class#JSON#0" expanded="false" />
+            <element signature="method#toString#0;class#JSON#0" expanded="false" />
+            <element signature="method#putJSONArray#0;class#JSON#0" expanded="false" />
+            <element signature="method#values#0;class#JSON#0" expanded="false" />
+            <element signature="method#write#0;class#JSON#0" expanded="false" />
+            <element signature="method#read#0;class#JSON#0" expanded="false" />
+            <element signature="method#read#1;class#JSON#0" expanded="false" />
+            <element signature="method#exclude#0;class#JSON#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -473,60 +358,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
           <caret line="46" column="21" lean-forward="false" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
-=======
-    <entry file="file://$PROJECT_DIR$/src/org/javabrain/util/data/Seeker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/javabrain/util/data/LocalStorage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/javabrain/util/data/JSON.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
->>>>>>> 02248bbc1581bc2c45d4f6bc7d7e165d886f9919
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/javabrain/util/resources/Path.java">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
         <state relative-caret-position="248">
-=======
-        <state relative-caret-position="202">
->>>>>>> 02248bbc1581bc2c45d4f6bc7d7e165d886f9919
           <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/org/javabrain/util/data/LocalStorage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-=======
-    <entry file="file://$PROJECT_DIR$/src/org/javabrain/util/alerts/Console.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
->>>>>>> 02248bbc1581bc2c45d4f6bc7d7e165d886f9919
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/org/javabrain/util/codify/Security.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2325">
@@ -536,116 +386,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/javabrain/util/data/JSON.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-81">
-          <caret line="126" column="31" lean-forward="false" selection-start-line="126" selection-start-column="31" selection-end-line="126" selection-end-column="31" />
+        <state relative-caret-position="-1380">
+          <caret line="138" column="0" lean-forward="true" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-=======
-    <entry file="file://$PROJECT_DIR$/src/org/javabrain/swing/container/Frame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/javabrain/swing/control/PanelImage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#369#370#0" expanded="false" />
-            <element signature="e#459#460#0" expanded="false" />
-            <element signature="e#708#709#0" expanded="false" />
-            <element signature="e#781#782#0" expanded="false" />
-            <element signature="e#810#811#0" expanded="false" />
-            <element signature="e#837#838#0" expanded="false" />
->>>>>>> 02248bbc1581bc2c45d4f6bc7d7e165d886f9919
+            <element signature="method#JSON#0;class#JSON#0" expanded="false" />
+            <element signature="method#JSON#1;class#JSON#0" expanded="false" />
+            <element signature="method#JSON#2;class#JSON#0" expanded="false" />
+            <element signature="method#getJSONArray#0;class#JSON#0" expanded="false" />
+            <element signature="method#getJSONArray#2;class#JSON#0" expanded="false" />
+            <element signature="method#getArray#0;class#JSON#0" expanded="false" />
+            <element signature="method#getList#0;class#JSON#0" expanded="false" />
+            <element signature="method#setJSON#0;class#JSON#0" expanded="false" />
+            <element signature="method#size#0;class#JSON#0" expanded="false" />
+            <element signature="method#replaceJSONArray#0;class#JSON#0" expanded="false" />
+            <element signature="method#putInJSONArray#0;class#JSON#0" expanded="false" />
+            <element signature="method#getKey#0;class#JSON#0" expanded="false" />
+            <element signature="method#existKey#0;class#JSON#0" expanded="false" />
+            <element signature="method#getKeys#0;class#JSON#0" expanded="false" />
+            <element signature="method#toJSONString#0;class#JSON#0" expanded="false" />
+            <element signature="method#toString#0;class#JSON#0" expanded="false" />
+            <element signature="method#putJSONArray#0;class#JSON#0" expanded="false" />
+            <element signature="method#values#0;class#JSON#0" expanded="false" />
+            <element signature="method#write#0;class#JSON#0" expanded="false" />
+            <element signature="method#read#0;class#JSON#0" expanded="false" />
+            <element signature="method#read#1;class#JSON#0" expanded="false" />
+            <element signature="method#exclude#0;class#JSON#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
   </component>
-<<<<<<< HEAD
-=======
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <last-edited>java-brain:jar</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.5" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>javabrain-proyect</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.6" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>guava-19.0</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
-  </component>
->>>>>>> 02248bbc1581bc2c45d4f6bc7d7e165d886f9919
 </project>
