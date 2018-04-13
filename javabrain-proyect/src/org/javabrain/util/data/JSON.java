@@ -1,19 +1,27 @@
 package org.javabrain.util.data;
 
-import org.javabrain.util.resources.Path;
+import org.javabrain.util.resource.Path;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import java.io.*;
+import java.sql.Timestamp;
 import java.util.*;
 
 /***
  * @author Fernando García
- * @version 0.0.1
+ * @version 0.0.2
  */
-public class JSON {
+public class JSON extends Object{
+
+    //STATICS
+    private static JSON ourInstance = new JSON();
+    public static JSON getInstance() {
+        return ourInstance;
+    }
+    //==========================================================================
 
     private JSONParser parser;
     private JSONObject obj;
@@ -135,7 +143,7 @@ public class JSON {
         }
         return dat;
     }
-    
+
     public ArrayList<Object> getList(Object key){
         ArrayList<Object> list = new ArrayList<>();
 
@@ -143,6 +151,10 @@ public class JSON {
             list.add(o);
         }
         return list;
+    }
+
+    public Timestamp getTimestamp(Object key){
+        return Timestamp.valueOf(obj.get(key).toString());
     }
 
     //===============================================================
@@ -222,6 +234,13 @@ public class JSON {
         return  ob;
     }
 
+    //FALTA LA ADICION DE CODIGO ESTE METODO AÑADIRA UN JSON DENTRO DE UN JSONARRAY ASI
+    //[{"hours":"2018-03-01 13:28:00","costo":36,"liters":25,"id":1,"namea":"maquina1","gasid": "1"}]
+    //Donde idgas fue añadido dentro del JSON original
+    public Object putObjectInJSONArray(){
+        return null;
+    }
+
     public String getKey(int index) {
         int i = 0;
         for (Object sets:obj.keySet()) {
@@ -243,7 +262,6 @@ public class JSON {
     }
 
     public Collection getKeys(){
-        ArrayList<Object> keys = new ArrayList<>();
         Collection collection = new ArrayList();
         for (Object sets:obj.keySet()) {
             collection.add(sets);
@@ -383,16 +401,70 @@ public class JSON {
         return al;
     }
 
+    public JSON select(String[] keys){
+
+        String out = "{";
+        String js = "";
+        if(obj.toString().equals("{}")) {
+            for (Object array : array) {
+                try {
+                    obj = (JSONObject) parser.parse(array.toString());
+                    int a = 1;
+                    for (String s : keys) {
+                        if (existKey(s)) {
+                            js += "\"" + s + "\":\"" + obj.get(s) + "\",";
+                            out += js;
+                            js = "";
+                        }
+
+                        if (keys.length == a) {
+                            out = out.substring(0, out.length() - 1) + "},{";
+                        }
+
+                        a++;
+                    }
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+            }
+        }else {
+            try {
+                int a = 1;
+                for (String s : keys) {
+                    if (existKey(s)) {
+                        js += "\"" + s + "\":\"" + obj.get(s) + "\",";
+                        out += js;
+                        js = "";
+                    }
+
+                    if (keys.length == a) {
+                        out = out.substring(0, out.length() - 1) + "},{";
+                    }
+                    a++;
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            out = out.substring(0,out.length()-2);
+            return new JSON(out);
+        }
+
+        out = "["+out.substring(0,out.length()-2)+"]";
+        return new JSON(out);
+    }
+
+
     //===============================================================
 
     //METODOS PRIVADOS
     //==============================================================
 
     //Versión 0.0.2 ->
-    //AGREGAR JSONSELECT
+    //AGREGAR JSONSELECT    _/ Completo
     //AGREGAR JSONJOIN
     //AGREGAR METODOS PARA EL ARRAR DONDE SOLO HAY OBJ <- Debo ser mas especifico
     //METODO PARA ORDENAR EL JSON
     //TIPEAR EL BSON "HACER EN OTRA CLACE"
     //METODOS PARA CONVERTIR SQL EN JSON Y BISEVERSA
+    //HasMap a JSON
 }

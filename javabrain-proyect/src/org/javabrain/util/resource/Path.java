@@ -1,4 +1,4 @@
-package org.javabrain.util.resources;
+package org.javabrain.util.resource;
 
 import org.javabrain.util.data.JSON;
 

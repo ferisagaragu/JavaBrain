@@ -1,16 +1,38 @@
-package org.javabrain.custom;
+package org.javabrain.swing.container;
 
-import javax.swing.*;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Insets;
+import java.awt.Rectangle;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JComponent;
+import javax.swing.JScrollBar;
+import javax.swing.JScrollPane;
+import static javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED;
+import static javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED;
+import javax.swing.ScrollPaneLayout;
 import javax.swing.plaf.basic.BasicScrollBarUI;
 
-import java.awt.*;
-
 /**
-* 
-* @author Fernny Reptar Mcfly
-*
-*/
-public class ScrollPaneBar extends JScrollPane {
+ * @author Fernando García
+ * @version 0.0.1
+ */
+public class ScrollPanel extends JScrollPane{
+
+    public ScrollPanel() {
+        setHorizontalScrollBar(new ScrollPaneBar().getHorizontalScrollBar());
+        setVerticalScrollBar(new ScrollPaneBar().getVerticalScrollBar());
+        setBackground(Color.WHITE);
+        setBorder(null);
+    } 
+}
+
+class ScrollPaneBar extends JScrollPane {
 
     private static final long serialVersionUID = 8607734981506765935L;
     private static final int SCROLL_BAR_ALPHA_ROLLOVER = 100;
@@ -190,21 +212,5 @@ public class ScrollPaneBar extends JScrollPane {
 
     public void setColorBar(Color color) {
         ScrollPaneBar.color = color;
-    }
-
-   /* public static void main(String[] args) {
-        JFrame frame = new JFrame();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setPreferredSize(new Dimension(400, 400));
-
-        JPanel content = new JPanel();
-        content.setBackground(Color.WHITE);
-        content.setPreferredSize(new Dimension(500, 500));
-        content.add(new JLabel("test"));
-        frame.add(new MaterialScroll(content));
-
-        frame.pack();
-        frame.setVisible(true);
-    }*/
-    
+    }    
 }

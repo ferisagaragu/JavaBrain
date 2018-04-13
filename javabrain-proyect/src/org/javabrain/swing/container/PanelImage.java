@@ -1,4 +1,4 @@
-package org.javabrain.swing.control;
+package org.javabrain.swing.container;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -17,7 +17,7 @@ public class PanelImage extends JPanel{
     private Icon icon;
 
     public PanelImage() {
-        image = new ImageIcon(getClass().getResource("/res/noimg.png")).getImage();
+        image = new ImageIcon(getClass().getResource("/res/component/noimg.png")).getImage();
     }
 
     @Override

@@ -1,11 +1,10 @@
-package org.javabrain.swing.control;
+package org.javabrain.swing.container;
 
 import java.awt.Image;
 import java.beans.SimpleBeanInfo;
 
 /**
- *
- * @author QualtopGroup
+ *@author Fernando García
  */
 public class PanelImageBeanInfo extends SimpleBeanInfo{
     
