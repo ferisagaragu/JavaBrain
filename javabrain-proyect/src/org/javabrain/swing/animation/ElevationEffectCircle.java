@@ -74,30 +74,10 @@ public class ElevationEffectCircle {
 //        g.drawImage(ShadowCircle.renderShadow(target.getWidth(), target.getHeight(), level.getValue()), 0, 0, null);
     }
 
-    /**
-     * Creates an elevation effect for the given component. You need to call
-     * {@link #paint(Graphics)} in your drawing method to actually paint this
-     * effect.
-     *
-     * @param target target component
-     * @param level initial elevation level (0..5)
-     * @return elevation effect for that component
-     * @see MaterialButton for an example of how the ripple effect is used
-     */
     public static ElevationEffectCircle applyTo(JComponent target, int level) {
         return new ElevationEffectCircle(target, level);
     }
 
-    /**
-     * Creates an elevation effect with a circular shadow for the given
-     * component. You need to call {@link #paint(Graphics)} in your drawing
-     * method to actually paint this effect.
-     *
-     * @param target target component
-     * @param level initial elevation level (0..5)
-     * @return elevation effect for that component
-     * @see MaterialButton for an example of how the ripple effect is used
-     */
     public static ElevationEffectCircle applyCirularTo(JComponent target, int level) {
         return new Circular(target, level);
     }

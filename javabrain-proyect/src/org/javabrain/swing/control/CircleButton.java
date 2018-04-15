@@ -1,35 +1,28 @@
 package org.javabrain.swing.control;
 
 import org.javabrain.swing.animation.ElevationEffectCircle;
+import org.javabrain.swing.animation.RippleEffect;
 import org.javabrain.swing.animation.ShadowCircle;
 
-import java.awt.BasicStroke;
-import java.awt.Color;
-import java.awt.Cursor;
-import java.awt.Dimension;
-import java.awt.FontMetrics;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.RenderingHints;
+import javax.swing.*;
+import javax.swing.plaf.basic.BasicButtonUI;
+import java.awt.*;
 import java.awt.event.FocusEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.RoundRectangle2D;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JComponent;
-import javax.swing.JLabel;
-import javax.swing.plaf.basic.BasicLabelUI;
 
 /**
- * @author Fernando García
- * @version 0.0.1
+ * A Material Design button.
+ *
+ * @see
+ * <a href="https://www.google.com/design/spec/components/buttons.html">Buttons
+ * (Google design guidelines)</a>
  */
-public class Circle extends JLabel{
+public class CircleButton extends JButton {
 
-    //Propiedades comunes
+    private RippleEffect ripple;
     private ElevationEffectCircle elevation;
     private Type type = Type.DEFAULT;
     private boolean isMousePressed = false;
@@ -38,18 +31,23 @@ public class Circle extends JLabel{
     private Cursor cursor = super.getCursor();
 
     //Propiedades para botton
-    private Image image;
+    private Icon icono = new ImageIcon(getClass().getResource("/res/component/user.png"));
+    private ImageIcon imagenIcon = (ImageIcon) this.icono;
+    private Image image = this.imagenIcon.getImage();
+    private Image image_default = this.image;
+    private RippleEffect rippleC;
     private ElevationEffectCircle elevationC;
     private boolean isImage = false;
 
-    //CONSTRUCTOR
-    public Circle() {
+    /**
+     * Creates a new button.
+     */
+    public CircleButton() {
+        ripple = RippleEffect.applyTo(this);
         elevation = ElevationEffectCircle.applyTo(this, 1);
         setOpaque(false);
-        setPreferredSize(new Dimension(70, 70));
+        setPreferredSize(new Dimension(60, 60));
         setText("");
-        setBackground(Color.decode("#3F51B5"));
-        setForeground(Color.white);
 
         addMouseListener(new MouseAdapter() {
             @Override
@@ -65,16 +63,19 @@ public class Circle extends JLabel{
 
             @Override
             public void mouseEntered(MouseEvent e) {
-
+                isMouseOver = true;
+                repaint();
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
-
+                isMouseOver = false;
+                repaint();
             }
         });
 
-        setUI(new BasicLabelUI() {
+
+        setUI(new BasicButtonUI() {
             @Override
             public boolean contains(JComponent c, int x, int y) {
                 return x > ShadowCircle.OFFSET_LEFT && y > ShadowCircle.OFFSET_TOP
@@ -82,7 +83,6 @@ public class Circle extends JLabel{
             }
         });
     }
-    //==========================================================
 
     //GETS
     public Type getType() {
@@ -114,19 +114,6 @@ public class Circle extends JLabel{
         this.rippleColor = rippleColor;
     }
 
-    public void setImage(Icon icon) {
-        
-        //Propiedades para la foto
-        elevationC = ElevationEffectCircle.applyCirularTo(this, 1);
-        isImage = true;
-        image = ((ImageIcon) icon).getImage();
-        repaint();
-        setText("");
-    }
-
-    //==========================================================
-
-    //OVERRIDE
     @Override
     public void setEnabled(boolean b) {
         super.setEnabled(b);
@@ -139,25 +126,52 @@ public class Circle extends JLabel{
         super.setCursor(cursor);
         this.cursor = cursor;
     }
+    
+    public void setImagen(Icon icon) {
+        
+        //Propiedades para la foto
+        rippleC = RippleEffect.applyTo(this);
+        elevationC = ElevationEffectCircle.applyCirularTo(this, 1);
+        setCursor(new Cursor(12));
+        setContentAreaFilled(false);
+        setBorderPainted(false);
+        setPreferredSize(new Dimension(60,60));
+        isImage = true;
+        
+        if (icon != null) {
+            this.icono = icon;
+            this.imagenIcon = ((ImageIcon) this.icono);
+            this.image = this.imagenIcon.getImage();
+        } else {
+            this.image = this.image_default;
+        }
+        repaint();
+        setText("");
+    }
 
+    //==========================================================
+    
     @Override
     protected void processFocusEvent(FocusEvent focusEvent) {
         super.processFocusEvent(focusEvent);
+        elevation.setLevel(getElevation());
     }
 
     @Override
     protected void processMouseEvent(MouseEvent mouseEvent) {
         super.processMouseEvent(mouseEvent);
+        elevation.setLevel(getElevation());
     }
     
     @Override
     protected void paintComponent(Graphics g) {
 
         if (isImage) {
-            int w = getWidth();
-            int h = getHeight();
+            super.paintComponent(g);
+            int w = getWidth()+2;
+            int h = getHeight()+2;
 
-            elevationC.paint(g);
+            elevation.paint(g);
             g.drawString("", 0, 0);
 
             Graphics2D g2 = (Graphics2D) g.create();
@@ -174,10 +188,11 @@ public class Circle extends JLabel{
             g2.drawImage(this.image, 0, 0, w - offset_lr, h - offset_td, this);
 
             g2.setClip(new RoundRectangle2D.Float(0, 0, getWidth() - offset_lr, getHeight() - offset_td, 100, 100));
+            ripple.paint(g2);
 
             g2.dispose();
+
         } else {
-            super.paintComponent(g);
             Graphics2D g2 = (Graphics2D) g;
             g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
             g2.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
@@ -215,24 +230,21 @@ public class Circle extends JLabel{
                 g2.setColor(new Color(fg.getRed() / 255f, fg.getGreen() / 255f, fg.getBlue() / 255f, 0.6f));
             }
             g2.drawString(getText().toUpperCase(), x, y);
+
             if (isEnabled()) {
                 g2.setClip(new RoundRectangle2D.Float(0, 0, getWidth() - offset_lr, getHeight() - offset_td, 100, 100));
                 g2.setColor(rippleColor);
+                ripple.paint(g2);
             }
         }
 
     }
 
     @Override
-    public void setPreferredSize(Dimension preferredSize) {
-        super.setPreferredSize(new Dimension(preferredSize.width,preferredSize.width));
-    }
-
-    @Override
     protected void paintBorder(Graphics g) {
         if (isImage) {
-            int w = getWidth() - 1;
-            int h = getHeight();
+            int w = getWidth() + 1;
+            int h = getHeight() + 2;
             final int offset_lr = ShadowCircle.OFFSET_LEFT + ShadowCircle.OFFSET_RIGHT;
             final int offset_td = ShadowCircle.OFFSET_TOP + ShadowCircle.OFFSET_BOTTOM;
 
@@ -255,7 +267,6 @@ public class Circle extends JLabel{
         }
         
     }
-    //===========================================================
 
     //ENUMS
     public enum Type {

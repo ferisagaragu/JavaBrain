@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_javabrain-proyect" default="compile.module.javabrain-proyect">
+  <dirname property="module.javabrain-proyect.basedir" file="${ant.file.module_javabrain-proyect}"/>
+  
+  <property name="module.jdk.home.javabrain-proyect" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.javabrain-proyect" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.javabrain-proyect" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.javabrain-proyect" value="-encoding UTF-8 -source 1.8 -target 1.8 ${compiler.args}"/>
+  
+  <property name="javabrain-proyect.output.dir" value="${module.javabrain-proyect.basedir}/out/production/javabrain-proyect"/>
+  <property name="javabrain-proyect.testoutput.dir" value="${module.javabrain-proyect.basedir}/out/test/javabrain-proyect"/>
+  
+  <path id="javabrain-proyect.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="javabrain-proyect.module.production.classpath">
+    <path refid="${module.jdk.classpath.javabrain-proyect}"/>
+    <path refid="library.json-simple-1.1.1.classpath"/>
+    <path refid="library.guava-19.0.classpath"/>
+    <path refid="library.org-apache-commons-codec.classpath"/>
+    <path refid="library.timingframework-core-5.0.0.classpath"/>
+    <path refid="library.timingframework-swing-5.0.0.classpath"/>
+  </path>
+  
+  <path id="javabrain-proyect.runtime.production.module.classpath">
+    <pathelement location="${javabrain-proyect.output.dir}"/>
+    <path refid="library.json-simple-1.1.1.classpath"/>
+    <path refid="library.guava-19.0.classpath"/>
+    <path refid="library.org-apache-commons-codec.classpath"/>
+    <path refid="library.timingframework-core-5.0.0.classpath"/>
+    <path refid="library.timingframework-swing-5.0.0.classpath"/>
+  </path>
+  
+  <path id="javabrain-proyect.module.classpath">
+    <path refid="${module.jdk.classpath.javabrain-proyect}"/>
+    <pathelement location="${javabrain-proyect.output.dir}"/>
+    <path refid="library.json-simple-1.1.1.classpath"/>
+    <path refid="library.guava-19.0.classpath"/>
+    <path refid="library.org-apache-commons-codec.classpath"/>
+    <path refid="library.timingframework-core-5.0.0.classpath"/>
+    <path refid="library.timingframework-swing-5.0.0.classpath"/>
+  </path>
+  
+  <path id="javabrain-proyect.runtime.module.classpath">
+    <pathelement location="${javabrain-proyect.testoutput.dir}"/>
+    <pathelement location="${javabrain-proyect.output.dir}"/>
+    <path refid="library.json-simple-1.1.1.classpath"/>
+    <path refid="library.guava-19.0.classpath"/>
+    <path refid="library.org-apache-commons-codec.classpath"/>
+    <path refid="library.timingframework-core-5.0.0.classpath"/>
+    <path refid="library.timingframework-swing-5.0.0.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.javabrain-proyect">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.javabrain-proyect">
+    <patternset refid="excluded.from.module.javabrain-proyect"/>
+  </patternset>
+  
+  <path id="javabrain-proyect.module.sourcepath">
+    <dirset dir="${module.javabrain-proyect.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.javabrain-proyect" depends="compile.module.javabrain-proyect.production,compile.module.javabrain-proyect.tests" description="Compile module javabrain-proyect"/>
+  
+  <target name="compile.module.javabrain-proyect.production" depends="register.custom.compilers" description="Compile module javabrain-proyect; production classes">
+    <mkdir dir="${javabrain-proyect.output.dir}"/>
+    <javac2 destdir="${javabrain-proyect.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.javabrain-proyect}/javac">
+      <compilerarg line="${compiler.args.javabrain-proyect}"/>
+      <bootclasspath refid="javabrain-proyect.module.bootclasspath"/>
+      <classpath refid="javabrain-proyect.module.production.classpath"/>
+      <src refid="javabrain-proyect.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.javabrain-proyect"/>
+    </javac2>
+    
+    <copy todir="${javabrain-proyect.output.dir}">
+      <fileset dir="${module.javabrain-proyect.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.javabrain-proyect.tests" depends="register.custom.compilers,compile.module.javabrain-proyect.production" description="compile module javabrain-proyect; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.javabrain-proyect" description="cleanup module">
+    <delete dir="${javabrain-proyect.output.dir}"/>
+    <delete dir="${javabrain-proyect.testoutput.dir}"/>
+  </target>
+</project>
