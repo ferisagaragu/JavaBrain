@@ -34,7 +34,7 @@ public class CircleButton extends JButton {
     //=======================================================================
 
     //Propiedades para botton
-    private Icon icono = new ImageIcon(getClass().getResource("/res/component/user.png"));
+    private Icon icono;
     private ImageIcon imagenIcon = (ImageIcon) this.icono;
     private Image image = this.imagenIcon.getImage();
     private Image image_default = this.image;
