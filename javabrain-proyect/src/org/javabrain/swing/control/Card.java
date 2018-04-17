@@ -38,6 +38,7 @@ public class Card extends JPanel {
         icon.setBackground(colorLetter(letter));
         ripple.setColor(Color.decode("#E4E5E5"));
         setTitle(title);
+        repaint();
     }
     
     private void initComponents() {
@@ -99,6 +100,8 @@ public class Card extends JPanel {
                                                         .addGap(0, 0, Short.MAX_VALUE)))
                                         .addGap(18, 18, 18))
                 );
+
+                title = "My title";
                 break;
 
             case 1:

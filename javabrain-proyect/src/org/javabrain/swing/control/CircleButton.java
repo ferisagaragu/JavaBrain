@@ -14,14 +14,16 @@ import java.awt.geom.Ellipse2D;
 import java.awt.geom.RoundRectangle2D;
 
 /**
- * A Material Design button.
- *
- * @see
- * <a href="https://www.google.com/design/spec/components/buttons.html">Buttons
- * (Google design guidelines)</a>
+ * @author Fernando García
+ * @version 0.0.1
  */
 public class CircleButton extends JButton {
 
+    //Propiedades independientes
+    private int shadow;
+    //========================================================================
+
+    //Propiedades de circulo
     private RippleEffect ripple;
     private ElevationEffectCircle elevation;
     private Type type = Type.DEFAULT;
@@ -29,22 +31,21 @@ public class CircleButton extends JButton {
     private boolean isMouseOver = false;
     private Color rippleColor = Color.WHITE;
     private Cursor cursor = super.getCursor();
+    //=======================================================================
 
     //Propiedades para botton
     private Icon icono = new ImageIcon(getClass().getResource("/res/component/user.png"));
     private ImageIcon imagenIcon = (ImageIcon) this.icono;
     private Image image = this.imagenIcon.getImage();
     private Image image_default = this.image;
-    private RippleEffect rippleC;
-    private ElevationEffectCircle elevationC;
     private boolean isImage = false;
+    //=======================================================================
 
-    /**
-     * Creates a new button.
-     */
+    //CONSTRUCCION
     public CircleButton() {
+        shadow = 1;
         ripple = RippleEffect.applyTo(this);
-        elevation = ElevationEffectCircle.applyTo(this, 1);
+        elevation = ElevationEffectCircle.applyTo(this, shadow);
         setOpaque(false);
         setPreferredSize(new Dimension(60, 60));
         setText("");
@@ -83,61 +84,41 @@ public class CircleButton extends JButton {
             }
         });
     }
+    //=======================================================================
 
     //GETS
     public Type getType() {
         return type;
     }
-    
+
     public Color getRippleColor() {
         return rippleColor;
     }
-    
-    private int getElevation() {
-        if (isMousePressed) {
-            return 2;
-        } else if (type == Type.RAISED || isFocusOwner() || isMouseOver) {
-            return 1;
-        } else {
-            return 0;
-        }
-    }
 
+    public int getShadow() {
+        return shadow;
+    }
     //==========================================================
+
     //SETS
     public void setType(Type type) {
         this.type = type;
         repaint();
     }
-    
+
     public void setRippleColor(Color rippleColor) {
         this.rippleColor = rippleColor;
     }
 
-    @Override
-    public void setEnabled(boolean b) {
-        super.setEnabled(b);
-        elevation.setLevel(getElevation());
-        super.setCursor(b ? cursor : Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-    }
-
-    @Override
-    public void setCursor(Cursor cursor) {
-        super.setCursor(cursor);
-        this.cursor = cursor;
-    }
-    
     public void setImagen(Icon icon) {
-        
+
         //Propiedades para la foto
-        rippleC = RippleEffect.applyTo(this);
-        elevationC = ElevationEffectCircle.applyCirularTo(this, 1);
         setCursor(new Cursor(12));
         setContentAreaFilled(false);
         setBorderPainted(false);
         setPreferredSize(new Dimension(60,60));
         isImage = true;
-        
+
         if (icon != null) {
             this.icono = icon;
             this.imagenIcon = ((ImageIcon) this.icono);
@@ -149,18 +130,36 @@ public class CircleButton extends JButton {
         setText("");
     }
 
-    //==========================================================
+    public void setShadow(int shadow) {
+        this.shadow = shadow;
+        repaint();
+    }
+    //=======================================================================
+
+    //OVERRIDES
+    @Override
+    public void setEnabled(boolean b) {
+        super.setEnabled(b);
+        elevation.setLevel(shadow);
+        super.setCursor(b ? cursor : Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+    }
+
+    @Override
+    public void setCursor(Cursor cursor) {
+        super.setCursor(cursor);
+        this.cursor = cursor;
+    }
     
     @Override
     protected void processFocusEvent(FocusEvent focusEvent) {
         super.processFocusEvent(focusEvent);
-        elevation.setLevel(getElevation());
+        elevation.setLevel(shadow);
     }
 
     @Override
     protected void processMouseEvent(MouseEvent mouseEvent) {
         super.processMouseEvent(mouseEvent);
-        elevation.setLevel(getElevation());
+        elevation.setLevel(shadow);
     }
     
     @Override
@@ -267,6 +266,7 @@ public class CircleButton extends JButton {
         }
         
     }
+    //=======================================================================
 
     //ENUMS
     public enum Type {

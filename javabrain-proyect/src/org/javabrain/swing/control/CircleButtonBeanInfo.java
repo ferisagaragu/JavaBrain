@@ -1,23 +1,23 @@
-package org.javabrain.swing.container;
+package org.javabrain.swing.control;
 
-import java.awt.Image;
+import java.awt.*;
 import java.beans.SimpleBeanInfo;
 
 /**
  *@author Fernando García
  */
-public class PanelImageBeanInfo extends SimpleBeanInfo{
-    
+public class CircleButtonBeanInfo extends SimpleBeanInfo{
+
     private final Image icon16;
     private final Image icon32;
     private final Image icon16M;
     private final Image icon32M;
 
-    public PanelImageBeanInfo() {
-        icon16 = loadImage("/res/beaninfo/panelimage16.png");
-        icon32 = loadImage("/res/beaninfo/panelimage32.png");
-        icon16M = loadImage("/res/beaninfo/panelimage16.png");
-        icon32M = loadImage("/res/beaninfo/panelimage32.png");
+    public CircleButtonBeanInfo() {
+        icon16 = loadImage("/res/beaninfo/circlebutton16.png");
+        icon32 = loadImage("/res/beaninfo/circlebutton32.png");
+        icon16M = loadImage("/res/beaninfo/circlebutton16.png");
+        icon32M = loadImage("/res/beaninfo/circlebutton32.png");
     }
 
     @Override
